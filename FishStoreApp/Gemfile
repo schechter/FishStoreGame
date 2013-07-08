@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'newrelic_rpm'
 gem 'devise'
+gem 'omniauth-twitter'
 
 
 group :assets do

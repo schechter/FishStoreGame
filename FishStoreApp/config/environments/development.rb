@@ -36,4 +36,7 @@ FishStoreApp::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  ENV['TWITTER_APP_ID'] = 'eomgcL6XLqp9Ip3y5Zwb2A'    #these are from the twitter site.
+  ENV['TWITTER_SECRET'] = '5iPUNMTiFfnE73V03lYCwFZ9yOBMGvMIXURX1b53U'
+
 end
