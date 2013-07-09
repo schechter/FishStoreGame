@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709043205) do
+ActiveRecord::Schema.define(:version => 20130709151643) do
 
   create_table "aquaria", :force => true do |t|
     t.integer  "fish_capacity"
@@ -29,6 +29,21 @@ ActiveRecord::Schema.define(:version => 20130709043205) do
     t.integer  "aquarium_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+  end
+
+  create_table "identities", :force => true do |t|
+    t.string   "provider"
+    t.string   "secret"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.string   "user_name"
+    t.datetime "expires_at"
+    t.string   "name"
+    t.string   "image"
+    t.string   "url"
+    t.string   "token"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "species", :force => true do |t|

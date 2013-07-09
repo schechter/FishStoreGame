@@ -1,5 +1,6 @@
 Species.delete_all
 Aquarium.delete_all
+Fish.delete_all
 
 s1 = Species.create(price: 1, image: 'http://www.aquarienfisch.net/wp-content/uploads/2010/09/Guppy.jpg', name: 'Guppy', appetite: 2, cleanliness_level: 3)
 s2 = Species.create(price: 1, image: 'http://2.bp.blogspot.com/_ckBlasgNSzg/SHKo412KgMI/AAAAAAAAGxQ/81oe3eovg8A/s400/rope+fish.jpg', name: 'Reedfish', appetite: 4, cleanliness_level: 4)
