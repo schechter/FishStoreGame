@@ -1,0 +1,4 @@
+<% @species.each do |species| %>
+<%= button_to species.name, {:controller => "fish", :action => "create", :species => species.id }, :method=>:post %>
+<% end %>
+
