@@ -8,10 +8,17 @@
 </head>
 <body>
 
+
+<% if current_user %>
+<%= link_to 'sign_out', destroy_user_session_path, :method => :delete, class: "button" %>
+<% end %>
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
+
 <%= yield %>
 
+<%= javascript_include_tag :defaults %>
 </body>
 </html>
