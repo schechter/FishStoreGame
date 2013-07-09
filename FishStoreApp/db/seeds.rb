@@ -1,6 +1,7 @@
 Species.delete_all
 Aquarium.delete_all
 Fish.delete_all
+User.delete_all
 
 s1 = Species.create(price: 1, image: 'http://www.aquarienfisch.net/wp-content/uploads/2010/09/Guppy.jpg', name: 'Guppy', appetite: 2, cleanliness_level: 3)
 s2 = Species.create(price: 1, image: 'http://2.bp.blogspot.com/_ckBlasgNSzg/SHKo412KgMI/AAAAAAAAGxQ/81oe3eovg8A/s400/rope+fish.jpg', name: 'Reedfish', appetite: 4, cleanliness_level: 4)
@@ -23,6 +24,8 @@ a1 = Aquarium.create(fish_capacity: 3, price: 30)
 a2 = Aquarium.create(fish_capacity: 5, price: 55)
 a3 = Aquarium.create(fish_capacity: 8, price: 95)
 a4 = Aquarium.create(fish_capacity: 15, price: 250)
+
+u1 = User.create(user_name: 'foo', email: 'foo@example.com', password: 'qwerty')
 
 
 
