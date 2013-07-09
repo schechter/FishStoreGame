@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: aquaria
+#
+#  id            :integer          not null, primary key
+#  fish_capacity :integer
+#  price         :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  user_id       :integer
+#
+
 class Aquarium < ActiveRecord::Base
   attr_accessible :fish_capacity, :price, :user_id
 

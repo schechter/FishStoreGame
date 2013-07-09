@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: fish
+#
+#  id                   :integer          not null, primary key
+#  name                 :string(255)
+#  adjusted_appetite    :float
+#  adjusted_cleanliness :float
+#  species_id           :integer
+#  aquarium_id          :integer
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Fish do
