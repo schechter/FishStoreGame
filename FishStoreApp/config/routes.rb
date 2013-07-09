@@ -4,5 +4,5 @@ FishStoreApp::Application.routes.draw do
 
 root :to => "home#index"
 resources :species, only: [:new]
-resources :fish, only: [:new, :create]
+resources :fish, only: [:new, :create, :destroy]
 end
