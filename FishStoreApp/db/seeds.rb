@@ -24,6 +24,6 @@ a2 = Aquarium.create(fish_capacity: 5, price: 55)
 a3 = Aquarium.create(fish_capacity: 8, price: 95)
 a4 = Aquarium.create(fish_capacity: 15, price: 250)
 
-f1 = Fish.create(name: Faker::Name.first_name)
+
 
 

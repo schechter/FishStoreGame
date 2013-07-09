@@ -9,7 +9,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash[:error] = 'Unable to connected to Twitter'
     end
 
-    redirect_to root_path   #maybe hange to user path or something else..
+    redirect_to root_path   #maybe change to user path or something else..
 
   end
 end

@@ -18,8 +18,8 @@ class Fish < ActiveRecord::Base
  	belongs_to :aquarium
 
  	validates_presence_of :name
- 	# validates_presence_of :adjusted_appetite
- 	# validates_presence_of :adjusted_cleanliness
- 	# validates_numericality_of :adjusted_appetite
- 	# validates_numericality_of :adjusted_cleanliness
+ 	validates_presence_of :adjusted_appetite
+ 	validates_presence_of :adjusted_cleanliness
+ 	validates_numericality_of :adjusted_appetite
+ 	validates_numericality_of :adjusted_cleanliness
 end

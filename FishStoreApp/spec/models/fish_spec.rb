@@ -21,9 +21,9 @@ describe Fish do
   end
   describe 'validations' do
   	it {should validate_presence_of(:name) }
-  	# it {should validate_presence_of(:adjusted_appetite) }
-  	# it {should validate_presence_of(:adjusted_cleanliness) }
-  	# it {should validate_numericality_of(:adjusted_appetite) }
-  	# it {should validate_numericality_of(:adjusted_cleanliness) }
+  	it {should validate_presence_of(:adjusted_appetite) }
+  	it {should validate_presence_of(:adjusted_cleanliness) }
+  	it {should validate_numericality_of(:adjusted_appetite) }
+  	it {should validate_numericality_of(:adjusted_cleanliness) }
   end
 end
