@@ -1,0 +1,23 @@
+body {
+  width: 90%;
+}
+
+#bottom-buttons {
+  width: 85%;
+  margin: auto;
+}
+
+.box {
+ height: 150px;
+ width: 250px;
+ background-color: yellow;
+ display: inline-block;
+ margin: 35px 2% 0 2%;
+}
+
+#stats-container {
+width: 75%;
+height: 450px;
+margin: auto;
+background-color: pink;
+}
