@@ -6,4 +6,7 @@ class GamePagesController < ApplicationController
   def new
   end
 
+  def paypal
+  end
+
 end

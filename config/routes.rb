@@ -5,6 +5,7 @@ FishStoreApp::Application.routes.draw do
 root :to => "home#index"
 get '/game/stats' => 'game_pages#stats'
 get '/game/new' => 'game_pages#new'
+get '/paypal/stuff' => 'game_pages#paypal'
 
 
 resources :fish, only: [:new, :create, :destroy]
