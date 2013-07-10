@@ -7,14 +7,9 @@
     = csrf_meta_tags
     = favicon_link_tag 'favicon.jpg'
   %body
-    %p LOGIN::  foo@example.com  qwerty
-    - if current_user
-      = link_to 'sign_out', destroy_user_session_path, :method => :delete, class: "button"
-      %h4
-        = number_to_currency(current_user.funds)
+    = render partial: '/layouts/partials/nav'
     %p.notice= notice
     %p.alert= alert
     = yield
     :javascript
       $(document).foundation();
-
