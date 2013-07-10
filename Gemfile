@@ -7,6 +7,7 @@ gem 'haml'
 gem 'newrelic_rpm'
 gem 'devise'
 gem 'omniauth-twitter'
+gem 'faker'
 
 
 group :assets do
@@ -29,7 +30,7 @@ group :development, :test do
   gem 'annotate'
 
   gem 'rspec-rails'
-  gem 'faker'
+  # gem 'faker'
   gem 'factory_girl_rails'
 
   gem 'capybara'
