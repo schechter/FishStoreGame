@@ -22,4 +22,7 @@ class Fish < ActiveRecord::Base
  	validates_presence_of :adjusted_cleanliness
  	validates_numericality_of :adjusted_appetite
  	validates_numericality_of :adjusted_cleanliness
+
+
+  
 end
