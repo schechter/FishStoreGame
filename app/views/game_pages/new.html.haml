@@ -5,6 +5,11 @@
 #game-set-up
   %a.button{:href => "/game/play"} Start the game
   #aquaria-holder
+    - @users_aquaria.each do |users_aquarium|
+      .users-aquarium
+        = users_aquarium.fish_capacity
+        = users_aquarium.id
+
   #supply-store
     #aquaria-supply
       - @aquaria.each do |aquaria|

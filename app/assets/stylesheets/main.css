@@ -49,9 +49,16 @@ background-color: pink;
   height:250px;
 border: dashed yellow;
 }
+
 #species-supply {
 height: 250px;
 border: dashed green;
+}
+
+.users-aquarium {
+  width: 25px;
+  height: 20px;
+  background-color: aqua;
 }
 
 
