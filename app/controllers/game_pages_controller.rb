@@ -9,8 +9,7 @@ class GamePagesController < ApplicationController
   def play
     @species = Species.all
     @fish = Fish.all
-    @aquaria = Aquarium.all #where(:fish_capacity).distinct #.where(:user_id = nil)
-    #p @aquaria
+    @aquaria = Aquarium.unique_unowned_aquaria  #this method should be cleaned up?? Should be one sql querry but works
   end
 
   def paypal

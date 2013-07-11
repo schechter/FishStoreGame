@@ -25,7 +25,7 @@ class Fish < ActiveRecord::Base
 
 
 def add_fish_to_aquarium(aquarium)
-    unless aquarium.fishes.count === aquarium.fish_capacity 
+    unless aquarium.fishes.count == aquarium.fish_capacity 
       aquarium.fishes << self
     end
   end
