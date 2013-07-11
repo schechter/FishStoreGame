@@ -56,9 +56,11 @@ border: dashed green;
 }
 
 .users-aquarium {
-  width: 25px;
-  height: 20px;
+  width: 45px;
+  height: 30px;
   background-color: aqua;
+  margin: 25px 0 45px 0;
+  display: inline-block;
 }
 
 .fish-div{
