@@ -6,5 +6,5 @@
 
 
 - @aquaria.each do |aquaria|
-  .aquarium
+  .aquarium.users-aquaria
     = link_to "Buy an Aquarium that can hold #{aquaria.fish_capacity} fish.", sell_me_path(id: aquaria.id), method: :post, class: 'button'
