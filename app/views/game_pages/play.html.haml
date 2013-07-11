@@ -4,4 +4,7 @@
 
 = link_to "sell #{fish.name} the fish", sell_me_path(id: fish.id), method: :post, class: 'button'
 
-/ = link_to 'Purchase this Album', purchase_path(id: @album.id), method: :post, class: "button"
+
+- @aquaria.each do |aquaria|
+  .aquarium
+    = link_to "Buy an Aquarium that can hold #{aquaria.fish_capacity} fish.", sell_me_path(id: aquaria.id), method: :post, class: 'button'
