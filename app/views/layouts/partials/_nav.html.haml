@@ -11,6 +11,16 @@
   %section.top-bar-section
     %ul.left
       %li.divider
+        %li
+          = link_to 'game setup', game_new_path
+        %li
+          = link_to 'stats', game_stats_path
+        %li
+          = link_to 'paypal', paypal_stuff_path
+        %li
+          = link_to 'fish', new_fish_path
+        %li
+          = link_to 'new game', game_play_path
         %li.active
         - if current_user
           %li
@@ -20,4 +30,3 @@
               = number_to_currency(current_user.funds)
           %li
             = link_to 'sign_out', destroy_user_session_path, :method => :delete
-      %li.divider
