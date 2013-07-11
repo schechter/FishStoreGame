@@ -24,9 +24,9 @@ class Fish < ActiveRecord::Base
  	validates_numericality_of :adjusted_cleanliness
 
 
-  # def add_fish_to_aquarium(aquarium)
-  #   unless aquarium.fishes.count === aquarium.fish_capacity 
-  #     aquarium.fishes << self
-  #   end
-  # end
+def add_fish_to_aquarium(aquarium)
+    unless aquarium.fishes.count === aquarium.fish_capacity 
+      aquarium.fishes << self
+    end
+  end
 end
