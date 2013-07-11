@@ -24,16 +24,12 @@ group :development, :test do
 	gem 'pry-rails'
   gem 'pry-debugger'
   gem 'pry-stack_explorer'
-
   gem 'quiet_assets'
   gem 'binding_of_caller'
   gem 'meta_request'
-
   gem 'annotate'
-
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-
   gem 'capybara'
   gem 'database_cleaner'
   gem 'guard-rspec'
