@@ -25,7 +25,7 @@ a2 = Aquarium.create(fish_capacity: 5, price: 55)
 a3 = Aquarium.create(fish_capacity: 8, price: 95)
 a4 = Aquarium.create(fish_capacity: 15, price: 250)
 
-u1 = User.create(user_name: 'foo', email: 'foo@example.com', password: 'qwerty')
+u1 = User.create(user_name: 'foo', email: 'foo@example.com', password: 'qwerty', funds: 250)
 
 
 

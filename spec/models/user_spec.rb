@@ -22,7 +22,17 @@
 require 'spec_helper'
 
 describe User do
+  @user = User.create(user_name: 'foo', email: 'foo2@example.com', password: 'qwerty', funds: 250)
   describe 'validations' do
-  	it {should validate_presence_of(:user_name) }
+    it {should validate_presence_of(:user_name) }
+  end
+
+  describe 'change funds' do
+    it 'increases funds' do
+      pending 'had a hard time testing??  tested in console.  need to write test??'
+    end
+    it 'decreases funds' do
+      pending 'had a hard time testing??  tested in console.  need to write test??'
+    end
   end
 end

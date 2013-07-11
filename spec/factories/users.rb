@@ -3,6 +3,9 @@
 
 
 FactoryGirl.define do
-  factory :user do
+  factory :user1 do
+    user_name Faker::Name.name
+    email 'foo@example.com'
+    funds 250.0
   end
 end
