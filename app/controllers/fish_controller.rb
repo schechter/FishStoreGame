@@ -29,7 +29,6 @@ class FishController < ApplicationController
     p current_user.funds
     fish.destroy
     redirect_to :back
-    # u.decrease_funds(f.species.price)  
   end
 
 end
