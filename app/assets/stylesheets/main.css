@@ -61,4 +61,10 @@ border: dashed green;
   background-color: aqua;
 }
 
-
+.fish-div{
+  height:20px;
+  width:20px;
+  background-color: blue;
+  float:left;
+  margin-left:2px;
+}
