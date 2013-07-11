@@ -14,9 +14,22 @@ class FishController < ApplicationController
     redirect_to :back
   end
 
-def destroy
-  Fish.find(params[:id]).destroy
-  render nothing: true
-end
+  def destroy
+    Fish.find(params[:id]).destroy
+    render nothing: true
+  end
+
+  def sell_me
+    p '=========================='
+    p current_user
+    p params
+    fish = Fish.find(params[:id])
+    p current_user.funds
+    current_user.decrease_funds(fish.species.price)
+    p current_user.funds
+    fish.destroy
+    redirect_to :back
+    # u.decrease_funds(f.species.price)  
+  end
 
 end

@@ -25,7 +25,9 @@ describe UsersController  do
         it 'reduces the users funds by the price of the fish purchased' do
           pending
         end
+
       end
     end
   end
+
 end

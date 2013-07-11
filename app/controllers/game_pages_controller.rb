@@ -7,6 +7,9 @@ class GamePagesController < ApplicationController
   end
 
   def play
+    @species = Species.all
+    @fish = Fish.all
+    @aquaria = Aquarium.all
   end
 
   def paypal
