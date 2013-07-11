@@ -20,7 +20,6 @@ class Aquarium < ActiveRecord::Base
 
 
 
-
   def self.unique_unowned_aquaria
     capacities = []
     aquaria = []
