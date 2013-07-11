@@ -7,7 +7,9 @@
   #aquaria-holder
     - @users_aquaria.each do |users_aquarium|
       .users-aquarium.droppable
+        Aquarium that can hold 
         = users_aquarium.fish_capacity
+        more fish
         = users_aquarium.id
 
   #supply-store
