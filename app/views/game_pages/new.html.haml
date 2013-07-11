@@ -18,10 +18,6 @@
         .aquarium
           = link_to "Buy an Aquarium that can hold #{aquaria.fish_capacity} fish.", sell_me_path(id: aquaria.id), method: :post, class: 'button small'
     #species-supply
-      / .fish-div.draggable 1
-      / .fish-div.draggable 2
-      / .fish-div.draggable 3
-      / .fish-div.draggable 4
       - @species.each do |species|
         .fish-div.draggable 
           = species.name
@@ -30,6 +26,7 @@
         $('.droppable').droppable({
         drop: function( event, ui ) {
         console.log('Fish Dropped');
+        
         }
         });
 
