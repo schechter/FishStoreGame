@@ -6,9 +6,11 @@ class GamePagesController < ApplicationController
   def new
     @fish = Fish.all
     @aquaria = Aquarium.unique_unowned_aquaria  #this method should be cleaned up?? Should be one sql querry but works
-    @users_aquaria = Aquarium.where(user_id: current_user.id)
-    p '========================'
-    p @users_aquaria
+    if @users_aquaria = Aquarium.where(user_id: current_user.id)
+      @users_aquaria
+    else
+      @users_aquaria = []
+    end
   end
 
   def play
