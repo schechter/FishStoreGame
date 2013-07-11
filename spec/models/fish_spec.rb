@@ -29,15 +29,25 @@ describe Fish do
   end
 
   describe 'populate aquarium' do
-    
+    before do
+    @fish_1 = create(:fish)
+    @fish_2 = create(:fish)
+    @aquarium_1 = create(:aquarium)
+  end
     context 'the aquarium has not reached max fish capacity' do
       it 'increases the number of fish in the aquarium' do
-        
+        @aquarium_1.fish_capacity = 1
+        @fish_1.add_fish_to_aquarium(@aquarium_1)
+        @aquarium_1.fishes.count.should eq 1
       end
     end
     context 'the aquarium has reached max fish capacity' do
       it 'does not increase the number of fish in the aquarium ' do
-        pending
+        @aquarium_1.fish_capacity = 1
+        @aquarium_1.fishes = [@fish_1]
+        @fish_2.add_fish_to_aquarium(@aquarium_1)
+        @aquarium_1.fishes.count.should eq 1
+        @aquarium_1.fishes.should eq [@fish_1]
       end
     end
   end
