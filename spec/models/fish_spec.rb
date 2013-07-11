@@ -29,10 +29,7 @@ describe Fish do
   end
 
   describe 'populate aquarium' do
-    before(:each) do
-      @fish_1 = create(:fish)
-      @aquarium_1 = create(:aquarium)
-    end
+    
     context 'the aquarium has not reached max fish capacity' do
       it 'increases the number of fish in the aquarium' do
         

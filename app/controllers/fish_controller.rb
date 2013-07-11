@@ -27,6 +27,4 @@ class FishController < ApplicationController
     redirect_to :back  #need to ajax something here
   end
 
-
-
 end

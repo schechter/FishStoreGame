@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :aquarium do
-    fish_capactiy 1
+    fish_capacity 1
     price 1
   end
 end
