@@ -4,6 +4,7 @@ class GamePagesController < ApplicationController
   end
 
   def new
+    @species = Species.all
     @fish = Fish.all
     @aquaria = Aquarium.unique_unowned_aquaria  #this method should be cleaned up?? Should be one sql querry but works
     if @users_aquaria = Aquarium.where(user_id: current_user.id)
