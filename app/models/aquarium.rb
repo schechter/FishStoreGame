@@ -33,5 +33,4 @@ class Aquarium < ActiveRecord::Base
     end
     aquaria
   end
-  
 end
