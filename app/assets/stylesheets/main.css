@@ -56,10 +56,10 @@ border: dashed green;
 }
 
 .users-aquarium {
-  width: 45px;
-  height: 30px;
+  width: 105px;
+  height: 75px;
   background-color: aqua;
-  margin: 25px 0 45px 0;
+  margin: 25px 15px;
   display: inline-block;
 }
 
