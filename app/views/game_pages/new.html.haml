@@ -6,7 +6,7 @@
   %a.button{:href => "/game/play"} Start the game
   #aquaria-holder
     - @users_aquaria.each do |users_aquarium|
-      .users-aquarium
+      .users-aquarium.droppable
         = users_aquarium.fish_capacity
         = users_aquarium.id
 
