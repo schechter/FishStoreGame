@@ -59,7 +59,7 @@ class User < ActiveRecord::Base
     user
   end
 
-  def inncrease_funds(amount)
+  def increase_funds(amount)
     self.funds += amount
     self.save
   end
