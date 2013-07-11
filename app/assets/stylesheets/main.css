@@ -32,7 +32,7 @@ background-color: pink;
 
 #aquaria-holder {
   width: 450px;
-  height: 275px;
+  height: 500px;
   border: dashed black 1px;
   float: left;
   position: bottom;
@@ -46,7 +46,7 @@ background-color: pink;
 }
 
 #aquaria-supply {
-  height:200px;
+height:200px;
 border: dashed yellow;
 }
 
@@ -56,10 +56,11 @@ border: dashed green;
 }
 
 .users-aquarium {
-  width: 105px;
-  height: 50px;
+  width: 210px;
+  height: 150px;
+  float:left;
   background-color: aqua;
-  margin: 25px 15px;
+  margin: 5px;
   display: inline-block;
 }
 
