@@ -4,6 +4,7 @@ class GamePagesController < ApplicationController
   end
 
   def new
+    @fish = Fish.all
     @aquaria = Aquarium.unique_unowned_aquaria  #this method should be cleaned up?? Should be one sql querry but works
   end
 

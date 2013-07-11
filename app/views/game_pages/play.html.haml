@@ -1,10 +1,13 @@
 %h1
   pay game mode
--fish = @fish.first
 
-= link_to "sell #{fish.name} the fish", sell_me_path(id: fish.id), method: :post, class: 'button'
+
+
+-fish = @fish.first
+= link_to "sell #{fish.name} the fish to customer", buy_me_path(id: fish.id), method: :post, class: 'button'
+
 
 
 - @aquaria.each do |aquaria|
   .aquarium.users-aquaria
-    = link_to "Buy an Aquarium that can hold #{aquaria.fish_capacity} fish.", sell_me_path(id: aquaria.id), method: :post, class: 'button'
+    = "user owns this aquarium that can hold #{aquaria.fish_capacity} fish."

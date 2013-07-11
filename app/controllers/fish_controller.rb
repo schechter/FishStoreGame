@@ -22,9 +22,18 @@ class FishController < ApplicationController
 
   def sell_me
     fish = Fish.find(params[:id])
+    current_user.decrease_funds(fish.species.price)
+    fish.destroy
+    redirect_to :back  #need to ajax something here
+  end
+
+
+  def buy_me
+    fish = Fish.find(params[:id])
     current_user.increase_funds(fish.species.price*1.5)
     fish.destroy
     redirect_to :back  #need to ajax something here
   end
+
 
 end

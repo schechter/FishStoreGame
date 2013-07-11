@@ -1,9 +1,12 @@
 %h1
-  NEW Game page
+  Game SetUp
 
 
 %a.button{:href => "/game/play"} Start the game
 
+
+-fish = @fish.first
+= link_to "sell #{fish.name} the fish from supply store", sell_me_path(id: fish.id), method: :post, class: 'button'
 
 - @aquaria.each do |aquaria|
   .aquarium

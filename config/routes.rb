@@ -8,6 +8,7 @@ FishStoreApp::Application.routes.draw do
   get "/game/play" => 'game_pages#play'
   get '/paypal/stuff' => 'game_pages#paypal'
 match 'fish/:id/sell_me' => 'fish#sell_me', :as => :sell_me
+match 'fish/:id/buy_me' => 'fish#buy_me', :as => :buy_me
 match 'aquaria/:id/sell_me' => 'aquaria#sell_me', :as => :sell_me
 
 
