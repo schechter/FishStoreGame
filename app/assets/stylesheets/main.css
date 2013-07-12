@@ -40,19 +40,19 @@ background-color: pink;
 
 #supply-store {
   width: 350px;
-  height: 500px;
+  height: 600px;
   border: dashed blue 1px;
   float: right;
   bottom: 5px;
 }
 
 #aquaria-supply {
-height:200px;
+height:225px;
 border: dashed yellow;
 }
 
 #species-supply {
-height: 300px;
+height: 375px;
 border: dashed green;
 }
 
