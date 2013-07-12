@@ -34,19 +34,6 @@ FishStoreApp::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.smtp_settings = {
-    :authentication => :plain,
-    :address => 'smtp.mailgun.org',
-    :port => 587,
-    :user_name => 'postmaster@app16816672.mailgun.org',
-    :password => '8qtk7b8b1ko3',
-    :enable_starttls_auto => true
-  }
-
   ENV['TWITTER_APP_ID'] = 'eomgcL6XLqp9Ip3y5Zwb2A'    #these are from the twitter site.
   ENV['TWITTER_SECRET'] = '5iPUNMTiFfnE73V03lYCwFZ9yOBMGvMIXURX1b53U'
 
