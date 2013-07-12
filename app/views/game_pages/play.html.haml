@@ -5,9 +5,9 @@
       .users-aquarium.droppable
         -if users_aquarium.fishes
           -users_aquarium.fishes.each do |fish|
-            .fish-in-aquarium
+            .fish-in-aquarium 
               = image_tag fish.species.image, :class => "fish_pic"
-              fish 
+              fish
         %p.hidden= users_aquarium.id
 
   #supply-store
