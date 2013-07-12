@@ -105,6 +105,8 @@ border: dashed green;
   width: 60px;
   border:1px dashed blue;
   text-indent: -9999px;
+  vertical-align:bottom;
+  display:table-cell; 
 }
 
 .start-game {
@@ -126,4 +128,11 @@ border: dashed green;
   float:left;
   width: 2px;
   height: 2px;
+}
+
+.fish_pic {
+  margin: 2px;
+  height: auto;
+  width: 56px;
+  float: left;
 }

@@ -1,0 +1,15 @@
+- @users_aquaria.each do |users_aquarium|
+  .users-aquarium.droppable
+    -if users_aquarium.fishes.count == 0
+      Tank holds:
+      = users_aquarium.fish_capacity
+      fish.
+    -else
+      Tank holds: 
+      = users_aquarium.fish_capacity - users_aquarium.fishes.count
+      more fish.
+    -if users_aquarium.fishes
+      -users_aquarium.fishes.each do |fish|
+        .fish-in-aquarium
+          = fish.name
+    %p.hidden= users_aquarium.id

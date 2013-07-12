@@ -58,20 +58,17 @@ function water_color() {
     return color;
 }
 
-
-$('.fish-div').draggable({
-    revert: true
-});
+function species_draggable() {
+    $('.fish-div').draggable({
+        revert: true
+    });
+}
 
 
 $('.droppable').droppable({
     drop: function(event, ui) {
         var text = (ui.draggable.context.outerText);
-        // console.log(text);
-        // console.log($(event.target).find('p').text());
-        // console.log(ui);
         var aquarium = $(event.target).find('p').text();
-        // console.log(aquarium);
         if (text == 'water') {
             clean_aquarium_water();
         } else if (text == 'food') {
@@ -81,7 +78,6 @@ $('.droppable').droppable({
         }
     }
 });
-
 
 function add_fish_to_aquarium(aquarium, species) {
     console.log('we made it to fish town');
@@ -110,4 +106,5 @@ function feed_aquarium() {
 $(function() {
     $("#species-supply").on('click', "#food-maker", make_food);
     $("#aquaria-supply").on('click', "#water-maker", make_water);
+    $("#species-supply").on('mouseover', ".fish-div", species_draggable);
 });

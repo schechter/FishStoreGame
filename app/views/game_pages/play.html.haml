@@ -3,10 +3,11 @@
   #aquaria-holder
     - @users_aquaria.each do |users_aquarium|
       .users-aquarium.droppable
-        Aquarium that can hold 
-        = users_aquarium.fish_capacity
-        more fish
-        = users_aquarium.id
+        -if users_aquarium.fishes
+          -users_aquarium.fishes.each do |fish|
+            .fish-in-aquarium
+              = image_tag fish.species.image, :class => "fish_pic"
+        %p.hidden= users_aquarium.id
 
   #supply-store
     #aquaria-supply
