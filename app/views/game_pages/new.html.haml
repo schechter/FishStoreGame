@@ -16,6 +16,8 @@
           -users_aquarium.fishes.each do |fish|
             .fish-in-aquarium
               = fish.name
+              the 
+              = fish.species.name
         %p.hidden= users_aquarium.id
   #supply-store
     #aquaria-supply
@@ -27,5 +29,5 @@
         .fish-div.draggable
           .hidden 
             species 
-          = species.name          
+          = species.name         
 = javascript_include_tag 'play'

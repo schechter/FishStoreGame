@@ -1,1 +1,15 @@
-<%=j render partial: 'game_pages/partials/new' %>
+$('#aquaria-holder').empty().append('<%=j render partial: 'game_pages/partials/aquaria_holder' %>')
+
+$('.droppable').droppable({
+    drop: function(event, ui) {
+        var text = (ui.draggable.context.outerText);
+        var aquarium = $(event.target).find('p').text();
+        if (text == 'water') {
+            clean_aquarium_water();
+        } else if (text == 'food') {
+            feed_aquarium();
+        } else {
+            add_fish_to_aquarium(aquarium, text);
+        }
+    }
+});
