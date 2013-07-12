@@ -30,7 +30,6 @@ background-color: pink;
   margin: auto;
 }
 
-
 #aquaria-holder {
   width: 450px;
   height: 500px;
@@ -79,7 +78,7 @@ border: dashed green;
   margin:6px 2px;
 }
 
-.fish-div:hover {
+.fish-div,#water-maker,#food-maker:hover {
   cursor: pointer;
 }
 
@@ -92,11 +91,10 @@ border: dashed green;
   position:relative;
   top: 25%;
   left: 35%;
-  height: 60px;
-  width: 60px;
-  background-color: gray;
+  height: 62px;
+  width: 62px;
+  border:1px dashed gray;
 }
-
 
 #water-maker {
   position:relative;
@@ -104,8 +102,9 @@ border: dashed green;
   left: 35%;
   height: 60px;
   width: 60px;
-  background-color: blue;
+  border:1px dashed blue;
 }
+
 .start-game {
   position: relative !important;
   margin: auto !important;
@@ -113,4 +112,16 @@ border: dashed green;
 
 .hidden {
   display: none;
+}
+
+.pellet {
+  float:left;
+  width: 2px;
+  height: 2px;
+}
+
+.water {
+  float:left;
+  width: 2px;
+  height: 2px;
 }
