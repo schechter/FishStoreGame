@@ -17,18 +17,5 @@
     #species-supply
       - @species.each do |species|
         .fish-div.draggable 
-          = species.name
-      :javascript
-        $('.fish-div').draggable( {revert:true});
-        $('.droppable').droppable({
-        drop: function( event, ui ) {
-        console.log('Fish Dropped')
-        console.log(event);
-        console.log(ui);
-        console.log(event.target)
-        }
-        });
-
-
-
-
+          = species.name          
+= javascript_include_tag 'setup'
