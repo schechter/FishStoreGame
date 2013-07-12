@@ -1,13 +1,21 @@
 %h1
-  pay game mode
+  play game mode
+
+#game-set-up
+  #aquaria-holder
+    - @users_aquaria.each do |users_aquarium|
+      .users-aquarium.droppable
+        Aquarium that can hold 
+        = users_aquarium.fish_capacity
+        more fish
+        = users_aquarium.id
+
+  #supply-store
+    #aquaria-supply
+      #water-maker
+        water maker
+    #species-supply
+      #food-supply
+        food supply
 
 
-
--fish = @fish.first
-= link_to "sell #{fish.name} the fish to customer", buy_me_path(id: fish.id), method: :post, class: 'button'
-
-
-
-- @aquaria.each do |aquaria|
-  .aquarium.users-aquaria
-    = "user owns this aquarium that can hold #{aquaria.fish_capacity} fish."

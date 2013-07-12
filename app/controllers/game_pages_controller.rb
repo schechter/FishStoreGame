@@ -18,7 +18,11 @@ class GamePagesController < ApplicationController
     @species = Species.all
     @fish = Fish.all
     @aquaria = Aquarium.where(user_id: current_user.id)
-    
+    if @users_aquaria = Aquarium.where(user_id: current_user.id)
+      @users_aquaria
+    else
+      @users_aquaria = []
+    end
   end
 
   def paypal
