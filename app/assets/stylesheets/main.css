@@ -80,3 +80,22 @@ border: dashed green;
   height:40px;
   width:40px;
 }
+
+#food-maker {
+  position:relative;
+  top: 25%;
+  left: 35%;
+  height: 60px;
+  width: 60px;
+  background-color: gray;
+}
+
+
+#water-maker {
+  position:relative;
+  top: 25%;
+  left: 35%;
+  height: 60px;
+  width: 60px;
+  background-color: blue;
+}
