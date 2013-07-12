@@ -136,3 +136,7 @@ border: dashed green;
   width: 56px;
   float: left;
 }
+
+.fish-in-aquarium {
+  cursor: pointer;
+}
