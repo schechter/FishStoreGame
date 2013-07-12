@@ -71,10 +71,6 @@ ActiveRecord::Schema.define(:version => 20130712134447) do
     t.datetime "updated_at",                             :null => false
     t.float    "funds"
     t.string   "user_name"
-    t.string   "confirmation_token"
-    t.string   "unconfirmed_email"
-    t.string   "confirmed_at"
-    t.string   "confirmation_sent_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
