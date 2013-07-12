@@ -18,7 +18,7 @@ class Aquarium < ActiveRecord::Base
   belongs_to :user
   has_many :fishes
 
-
+#Aquarium.select('distinct fish_capacity').where(user_id: nil) #try this to replace method below
 
   def self.unique_unowned_aquaria
     capacities = []
