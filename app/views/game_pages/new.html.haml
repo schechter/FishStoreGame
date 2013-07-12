@@ -3,7 +3,8 @@
 
 
 #game-set-up
-  %a.button{:href => "/game/play"} Start the game
+  #counter
+    %a.button.start-game{:href => "/game/play"} Start the game
   #aquaria-holder
     - @users_aquaria.each do |users_aquarium|
       .users-aquarium.droppable
