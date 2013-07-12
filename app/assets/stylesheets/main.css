@@ -110,3 +110,7 @@ border: dashed green;
   position: relative !important;
   margin: auto !important;
 }
+
+.hidden {
+  display: none;
+}
