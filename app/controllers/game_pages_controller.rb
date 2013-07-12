@@ -25,6 +25,15 @@ class GamePagesController < ApplicationController
     end
   end
 
+  def populate_aquarium
+    a = params[:stuff][:aquarium]
+    f = params[:stuff][:species]
+    aquarium = Aquarium.find(params[:stuff][:aquarium])
+    p aquarium
+    species = Species.find_by_name(params[:stuff][:species])
+    p species
+  end
+
   def paypal
   end
 

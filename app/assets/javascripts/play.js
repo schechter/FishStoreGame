@@ -67,29 +67,43 @@ $('.fish-div').draggable({
 $('.droppable').droppable({
     drop: function(event, ui) {
         var text = (ui.draggable.context.outerText);
-        console.log(text);
+        // console.log(text);
         // console.log($(event.target).find('p').text());
-        console.log(ui);
+        // console.log(ui);
+        var aquarium = $(event.target).find('p').text();
+        // console.log(aquarium);
         if (text == 'water') {
             clean_aquarium_water();
         } else if (text == 'food') {
             feed_aquarium();
         } else {
-            add_fish_to_aquarium();
+            add_fish_to_aquarium(aquarium, text);
         }
     }
 });
 
 
-function add_fish_to_aquarium() {
+function add_fish_to_aquarium(aquarium, species) {
     console.log('we made it to fish town');
+    var settings = {
+        stuff: {
+            aquarium: aquarium,
+            species: species
+        }
+    };
+    $.ajax({
+        type: 'POST',
+        data: settings,
+        url: '/game/populate_aquarium',
+        dataType: 'script'
+    });
 }
 
-function clean_aquarium_water(){
+function clean_aquarium_water() {
     console.log('we made it water town');
 }
 
-function feed_aquarium(){
+function feed_aquarium() {
     console.log('we made it to food town');
 }
 
