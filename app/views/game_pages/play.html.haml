@@ -1,7 +1,5 @@
-%h1
-  play game mode
-
 #game-set-up
+  #counter
   #aquaria-holder
     - @users_aquaria.each do |users_aquarium|
       .users-aquarium.droppable
@@ -13,9 +11,9 @@
   #supply-store
     #aquaria-supply
       #water-maker
-        water maker
     #species-supply
       #food-maker
-        food supply
+
+= javascript_include_tag "play"
 
 
