@@ -1,4 +1,4 @@
-#game-set-up
+#game
   #counter
   #aquaria-holder
     - @users_aquaria.each do |users_aquarium|
@@ -11,8 +11,12 @@
   #supply-store
     #aquaria-supply
       #water-maker
+        %p.hidden
+          water
     #species-supply
       #food-maker
+        %span.hidden
+          food
 
 = javascript_include_tag "play"
 
