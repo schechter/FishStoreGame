@@ -5,6 +5,7 @@ var water_timer;
 
 function make_food() {
     timer = setInterval(add_pellet, 1);
+
     function add_pellet() {
         var pellet = $('<div>');
         pellet.addClass('pellet');
@@ -18,12 +19,15 @@ function make_food() {
     }
 }
 
-function food_ready(){
-    $('#food-maker').draggable({revert: true});
+function food_ready() {
+    $('#food-maker').draggable({
+        revert: true
+    });
 }
 
 function make_water() {
     water_timer = setInterval(add_water, 1);
+
     function add_water() {
         var water = $('<div>');
         water.addClass('water');
@@ -37,8 +41,10 @@ function make_water() {
     }
 }
 
-function water_ready(){
-    $('#water-maker').draggable({revert: true});
+function water_ready() {
+    $('#water-maker').draggable({
+        revert: true
+    });
 }
 
 
@@ -47,30 +53,45 @@ function food_color() {
     return color;
 }
 
-function water_color(){
-    var color = "rgb(" + _.random(0, 70) + "," + _.random(0, 255) + ","+ _.random(180, 255)+")";
+function water_color() {
+    var color = "rgb(" + _.random(0, 70) + "," + _.random(0, 255) + "," + _.random(180, 255) + ")";
     return color;
 }
 
 
-$('.fish-div').draggable( {revert:true});
-
-
-$('.droppable').droppable({
-    drop: function( event, ui ) {
-    console.log(event);
-    console.log($(event.target).find('p').text());
-    console.log(ui.draggable.context.outerText);
-    console.log($(event.target).find('span').text());
-    // add_fish_to_aquarium();
-  }
+$('.fish-div').draggable({
+    revert: true
 });
 
 
-function add_fish_to_aquarium(){
-  console.log('we made it to fish town');
+$('.droppable').droppable({
+    drop: function(event, ui) {
+        var text = (ui.draggable.context.outerText);
+        console.log(text);
+        // console.log($(event.target).find('p').text());
+        console.log(ui);
+        if (text == 'water') {
+            clean_aquarium_water();
+        } else if (text == 'food') {
+            feed_aquarium();
+        } else {
+            add_fish_to_aquarium();
+        }
+    }
+});
+
+
+function add_fish_to_aquarium() {
+    console.log('we made it to fish town');
 }
 
+function clean_aquarium_water(){
+    console.log('we made it water town');
+}
+
+function feed_aquarium(){
+    console.log('we made it to food town');
+}
 
 $(function() {
     $("#species-supply").on('click', "#food-maker", make_food);
