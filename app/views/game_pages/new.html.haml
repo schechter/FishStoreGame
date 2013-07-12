@@ -7,6 +7,10 @@
         Aquarium that can hold 
         = users_aquarium.fish_capacity
         more fish
+        -if users_aquarium.fishes
+          -users_aquarium.fishes.each do |fish|
+            .fish-in-aquarium
+              = fish.name
         %p.hidden= users_aquarium.id
   #supply-store
     #aquaria-supply
