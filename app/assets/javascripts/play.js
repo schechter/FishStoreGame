@@ -64,6 +64,11 @@ function species_draggable() {
     });
 }
 
+function fish_draggable() {
+    $('.fish-in-aquarium').draggable({
+        revert: true
+    });
+}
 
 $('.droppable').droppable({
     drop: function(event, ui) {
@@ -73,7 +78,10 @@ $('.droppable').droppable({
             clean_aquarium_water();
         } else if (text == 'food') {
             feed_aquarium();
-        } else {
+        } else if (text == 'fish') {
+            console.log('nothing');
+        }
+        else {
             add_fish_to_aquarium(aquarium, text);
         }
     }
@@ -107,4 +115,5 @@ $(function() {
     $("#species-supply").on('click', "#food-maker", make_food);
     $("#aquaria-supply").on('click', "#water-maker", make_water);
     $("#species-supply").on('mouseover', ".fish-div", species_draggable);
+    $("#aquaria-holder").on('mouseover', '.fish-in-aquarium', fish_draggable);
 });
