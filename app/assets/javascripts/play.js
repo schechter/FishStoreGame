@@ -1,7 +1,101 @@
 var counter = 0;
 var timer;
 var water_timer;
+var aquarium_timer;
 
+
+function tanks_get_dirty_timer() {
+    aquarium_timer = setInterval(dirty_tanks1, parseInt($($('.users-aquarium')[0]).find('h1').text() * 18, 10) * 5);
+    aquarium_timer1 = setInterval(dirty_tanks2, parseInt($($('.users-aquarium')[1]).find('h1').text() * 18, 10) * 5);
+    aquarium_timer1 = setInterval(dirty_tanks3, parseInt($($('.users-aquarium')[2]).find('h1').text() * 18, 10) * 5);
+    aquarium_timer1 = setInterval(dirty_tanks4, parseInt($($('.users-aquarium')[3]).find('h1').text() * 18, 10) * 5);
+    aquarium_timer1 = setInterval(dirty_tanks5, parseInt($($('.users-aquarium')[4]).find('h1').text() * 18, 10) * 5);
+    aquarium_timer1 = setInterval(dirty_tanks6, parseInt($($('.users-aquarium')[5]).find('h1').text() * 18, 10) * 5);
+}
+
+function dirty_tanks1() {
+    dirty_tank1($('.users-aquarium')[0]);
+}
+
+function dirty_tanks2() {
+    dirty_tank2($('.users-aquarium')[1]);
+}
+
+function dirty_tanks3() {
+    dirty_tank3($('.users-aquarium')[2]);
+}
+
+function dirty_tanks4() {
+    dirty_tank4($('.users-aquarium')[3]);
+}
+
+function dirty_tanks5() {
+    dirty_tank5($('.users-aquarium')[4]);
+}
+
+function dirty_tanks6() {
+    dirty_tank6($('.users-aquarium')[5]);
+}
+
+function dirty_tank1(tank) {
+    var dirty_bar = $(tank).parent().find('.tank-dirtiness-bar');
+    var dirt = $('<div>');
+    if (dirty_bar.children().length < 74) {
+        dirt.addClass('dirt');
+        dirt.css('background-color', dirt_color());
+        dirt.appendTo(dirty_bar);
+    }
+}
+
+function dirty_tank2(tank) {
+    var dirty_bar = $(tank).parent().find('.tank-dirtiness-bar');
+    var dirt = $('<div>');
+    if (dirty_bar.children().length < 74) {
+        dirt.addClass('dirt');
+        dirt.css('background-color', dirt_color());
+        dirt.appendTo(dirty_bar);
+    }
+}
+
+function dirty_tank3(tank) {
+    var dirty_bar = $(tank).parent().find('.tank-dirtiness-bar');
+    var dirt = $('<div>');
+    if (dirty_bar.children().length < 74) {
+        dirt.addClass('dirt');
+        dirt.css('background-color', dirt_color());
+        dirt.appendTo(dirty_bar);
+    }
+}
+
+function dirty_tank4(tank) {
+    var dirty_bar = $(tank).parent().find('.tank-dirtiness-bar');
+    var dirt = $('<div>');
+    if (dirty_bar.children().length < 74) {
+        dirt.addClass('dirt');
+        dirt.css('background-color', dirt_color());
+        dirt.appendTo(dirty_bar);
+    }
+}
+
+function dirty_tank5(tank) {
+    var dirty_bar = $(tank).parent().find('.tank-dirtiness-bar');
+    var dirt = $('<div>');
+    if (dirty_bar.children().length < 74) {
+        dirt.addClass('dirt');
+        dirt.css('background-color', dirt_color());
+        dirt.appendTo(dirty_bar);
+    }
+}
+
+function dirty_tank6(tank) {
+    var dirty_bar = $(tank).parent().find('.tank-dirtiness-bar');
+    var dirt = $('<div>');
+    if (dirty_bar.children().length < 74) {
+        dirt.addClass('dirt');
+        dirt.css('background-color', dirt_color());
+        dirt.appendTo(dirty_bar);
+    }
+}
 
 function make_food() {
     timer = setInterval(add_pellet, 1);
@@ -47,6 +141,10 @@ function water_ready() {
     });
 }
 
+function dirt_color() {
+    var color = "rgb(" + _.random(175, 255) + "," + _.random(0, 80) + "," + _.random(0, 80) + ")";
+    return color;
+}
 
 function food_color() {
     var color = "rgb(" + _.random(0, 255) + "," + _.random(0, 255) + "," + _.random(0, 255) + ")";
@@ -80,8 +178,7 @@ $('.droppable').droppable({
             feed_aquarium();
         } else if (text == 'fish') {
             console.log('nothing');
-        }
-        else {
+        } else {
             add_fish_to_aquarium(aquarium, text);
         }
     }
@@ -116,4 +213,5 @@ $(function() {
     $("#aquaria-supply").on('click', "#water-maker", make_water);
     $("#species-supply").on('mouseover', ".fish-div", species_draggable);
     $("#aquaria-holder").on('mouseover', '.fish-in-aquarium', fish_draggable);
+    tanks_get_dirty_timer();
 });

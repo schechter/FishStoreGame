@@ -32,4 +32,17 @@ class Aquarium < ActiveRecord::Base
     end
     aquaria
   end
+
+  def dirtiness_level
+    fishes = self.fishes
+    dirtiness = 0
+    fishes.each do |fish|
+      dirtiness += fish.adjusted_cleanliness 
+    end
+    dirtiness/self.fish_capacity
+  end
+
+  def hunger_level
+    
+  end
 end

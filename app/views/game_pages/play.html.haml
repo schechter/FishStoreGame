@@ -2,13 +2,18 @@
   #counter
   #aquaria-holder
     - @users_aquaria.each do |users_aquarium|
-      .users-aquarium.droppable
-        -if users_aquarium.fishes
-          -users_aquarium.fishes.each do |fish|
-            .fish-in-aquarium 
-              = image_tag fish.species.image, :class => "fish_pic"
-              fish
-        %p.hidden= users_aquarium.id
+      #aquarium-holder
+        .users-aquarium.droppable{:'data-id' => users_aquarium.id}
+          -if users_aquarium.fishes
+            -users_aquarium.fishes.each do |fish|
+              .fish-in-aquarium 
+                = image_tag fish.species.image, :class => "fish_pic"
+                fish
+          %p.hidden= users_aquarium.id
+          %h1.hidden= users_aquarium.dirtiness_level
+          // %h2.hidden= @hunger_level
+        .tank-dirtiness-bar 
+        .tank-food-bar
 
   #supply-store
     #aquaria-supply

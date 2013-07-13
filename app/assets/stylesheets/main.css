@@ -24,14 +24,14 @@ background-color: pink;
 
 #game {
   position: relative;
-  width: 880px;
+  width: 960px;
   height: 600px;
   border: solid black 1px;
   margin: auto;
 }
 
 #aquaria-holder {
-  width: 450px;
+  width: 570px;
   height: 500px;
   border: dashed black 1px;
   float: left;
@@ -124,6 +124,12 @@ border: dashed green;
   height: 2px;
 }
 
+.dirt {
+  float:left;
+  width: 28px;
+  height: 2px;
+}
+
 .water {
   float:left;
   width: 2px;
@@ -139,4 +145,24 @@ border: dashed green;
 
 .fish-in-aquarium {
   cursor: pointer;
+}
+
+.tank-dirtiness-bar {
+  height:150px;
+  width: 30px;
+  border:1px dashed brown;
+  float:left;
+}
+
+.tank-food-bar {
+  height:150px;
+  width: 30px;
+  border:1px dashed gray;
+  float:right;
+}
+
+#aquarium-holder {
+  width:282px;
+  border: 1px solid green;
+  display: inline-block;
 }
