@@ -303,10 +303,13 @@ function clean_aquarium_water() {
     $('#water-maker').text('water');
 }
 
-
-
 function feed_aquarium() {
     console.log('we made it to food town');
+    console.log($(event.target).parent().find('.tank-food-bar'));
+    $(event.target).parent().find('.tank-food-bar').empty();
+    console.log(event);
+    $('#food-maker').empty();
+    $('#food-maker').text('food');
 }
 
 $(function() {
