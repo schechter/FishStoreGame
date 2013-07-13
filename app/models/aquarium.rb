@@ -43,6 +43,11 @@ class Aquarium < ActiveRecord::Base
   end
 
   def hunger_level
-    
+    fishes = self.fishes
+    hunger = 0
+    fishes.each do |fish|
+      hunger += fish.adjusted_appetite
+    end
+    hunger/self.fish_capacity
   end
 end
