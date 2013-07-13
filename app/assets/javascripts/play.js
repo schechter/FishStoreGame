@@ -300,7 +300,7 @@ function clean_aquarium_water() {
     console.log($(event.target).parent().find('.tank-dirtiness-bar'));
     $(event.target).parent().find('.tank-dirtiness-bar').empty();
     $('#water-maker').empty();
-    $('#water-maker').text('water')
+    $('#water-maker').text('water');
 }
 
 
