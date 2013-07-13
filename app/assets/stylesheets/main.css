@@ -130,6 +130,13 @@ border: dashed green;
   height: 2px;
 }
 
+.food {
+  float:left;
+  width: 28px;
+  height: 2px;
+  background-color:white;
+}
+
 .water {
   float:left;
   width: 2px;
@@ -158,6 +165,7 @@ border: dashed green;
   height:150px;
   width: 30px;
   border:1px dashed gray;
+  background-color: green;
   float:right;
 }
 
