@@ -202,7 +202,14 @@ function add_fish_to_aquarium(aquarium, species) {
 
 function clean_aquarium_water() {
     console.log('we made it water town');
+    console.log(event);
+    console.log($(event.target).parent().find('.tank-dirtiness-bar'));
+    $(event.target).parent().find('.tank-dirtiness-bar').empty();
+    $('#water-maker').empty();
+    $('#water-maker').text('water')
 }
+
+
 
 function feed_aquarium() {
     console.log('we made it to food town');
