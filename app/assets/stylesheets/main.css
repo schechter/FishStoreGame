@@ -1,5 +1,6 @@
 body {
   width: 1080px;
+  font-family: Georgia;
 }
 
 #bottom-buttons {
@@ -240,4 +241,17 @@ body {
   left:-75px;
 }
 
+#water-maker-info, #food-maker-info {
+  padding:2px;
+  height: 70px;
+  width: 225px;
+  background-color: #88E5FF;
+  position:relative;
+  top: -10%;
+  left:30%;
+  font-size:12px;
+}
 
+#food-maker-info {
+  background-color: orange;
+}
