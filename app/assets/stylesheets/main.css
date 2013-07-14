@@ -25,7 +25,7 @@ body {
 #game {
   position: relative;
   width: 960px;
-  height: 600px;
+  height: 700px;
   border: solid black 1px;
   margin: auto;
 }
@@ -36,6 +36,8 @@ body {
   border: dashed black 1px;
   float: left;
   bottom: 5px;
+  position:relative;
+  top:100px;
 }
 
 #supply-store {
@@ -186,8 +188,8 @@ body {
 
 #customer {
   background-color: gray;
-  height: 100px;
-  width: 120px;
+  height: 120px;
+  width: 150px;
   position:relative;
   left:25%;
   top: -9999px;
