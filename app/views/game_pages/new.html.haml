@@ -22,8 +22,11 @@
   #supply-store
     #aquaria-supply
       - @aquaria.each do |aquaria|
-        .aquarium
-          = link_to "Buy an Aquarium that can hold #{aquaria.fish_capacity} fish.", sell_me_path(id: aquaria.id), method: :post, class: '.aquarium'
+        .aquarium{:'data-id' => aquaria.id}
+          Buy a Tank for
+          =aquaria.fish_capacity
+          Fish:
+          =number_to_currency(aquaria.price)
     #species-supply
       - @species.each do |species|
         .fish-div.draggable
@@ -31,3 +34,6 @@
             species 
           = species.name         
 = javascript_include_tag 'play'
+
+
+/ = link_to "Buy an Aquarium that can hold #{aquaria.fish_capacity} fish.", sell_me_path(id: aquaria.id), method: :post, class: '.aquarium'
