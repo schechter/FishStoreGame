@@ -13,7 +13,7 @@ FishStoreApp::Application.routes.draw do
   match 'game/populate_aquarium' => 'game_pages#populate_aquarium', :as => :populate_aquarium
   match 'game/sell_fish' => 'game_pages#sell_fish', :as => :sell_fish
   match 'game/get_dirtiness' => 'game_pages#get_dirtiness', :as => :get_dirtiness
-
+  match 'game/round_over' => 'game_pages#round_over', :S => :round_over
   resources :fish, only: [:new, :create, :destroy]
 
 end
