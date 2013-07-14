@@ -16,21 +16,21 @@ var hunger_timer5;
 var hunger_timer6;
 
 function tanks_need_food_timer() {
-    hunger_timer1 = setInterval(tank1_needs_food, parseInt($($('.users-aquarium')[0]).find('h2').text() * 18, 10) * 5);
-    hunger_timer2 = setInterval(tank2_needs_food, parseInt($($('.users-aquarium')[1]).find('h2').text() * 18, 10) * 5);
-    hunger_timer3 = setInterval(tank3_needs_food, parseInt($($('.users-aquarium')[2]).find('h2').text() * 18, 10) * 5);
-    hunger_timer4 = setInterval(tank4_needs_food, parseInt($($('.users-aquarium')[3]).find('h2').text() * 18, 10) * 5);
-    hunger_timer5 = setInterval(tank5_needs_food, parseInt($($('.users-aquarium')[4]).find('h2').text() * 18, 10) * 5);
-    hunger_timer6 = setInterval(tank6_needs_food, parseInt($($('.users-aquarium')[5]).find('h2').text() * 18, 10) * 5);
+    hunger_timer1 = setInterval(tank1_needs_food, parseInt($($('.users-aquarium')[0]).find('h2').text() * 18, 10)*1);
+    hunger_timer2 = setInterval(tank2_needs_food, parseInt($($('.users-aquarium')[1]).find('h2').text() * 18, 10)*1);
+    hunger_timer3 = setInterval(tank3_needs_food, parseInt($($('.users-aquarium')[2]).find('h2').text() * 18, 10)*1);
+    hunger_timer4 = setInterval(tank4_needs_food, parseInt($($('.users-aquarium')[3]).find('h2').text() * 18, 10)*1);
+    hunger_timer5 = setInterval(tank5_needs_food, parseInt($($('.users-aquarium')[4]).find('h2').text() * 18, 10)*1);
+    hunger_timer6 = setInterval(tank6_needs_food, parseInt($($('.users-aquarium')[5]).find('h2').text() * 18, 10)*1);
 }
 
 function tanks_get_dirty_timer() {
-    aquarium_timer1 = setInterval(dirty_tanks1, parseInt($($('.users-aquarium')[0]).find('h1').text() * 18, 10) * 5);
-    aquarium_timer2 = setInterval(dirty_tanks2, parseInt($($('.users-aquarium')[1]).find('h1').text() * 18, 10) * 5);
-    aquarium_timer3 = setInterval(dirty_tanks3, parseInt($($('.users-aquarium')[2]).find('h1').text() * 18, 10) * 5);
-    aquarium_timer4 = setInterval(dirty_tanks4, parseInt($($('.users-aquarium')[3]).find('h1').text() * 18, 10) * 5);
-    aquarium_timer5 = setInterval(dirty_tanks5, parseInt($($('.users-aquarium')[4]).find('h1').text() * 18, 10) * 5);
-    aquarium_timer6 = setInterval(dirty_tanks6, parseInt($($('.users-aquarium')[5]).find('h1').text() * 18, 10) * 5);
+    aquarium_timer1 = setInterval(dirty_tanks1, parseInt($($('.users-aquarium')[0]).find('h1').text() * 18, 10)*1);
+    aquarium_timer2 = setInterval(dirty_tanks2, parseInt($($('.users-aquarium')[1]).find('h1').text() * 18, 10)*1);
+    aquarium_timer3 = setInterval(dirty_tanks3, parseInt($($('.users-aquarium')[2]).find('h1').text() * 18, 10)*1);
+    aquarium_timer4 = setInterval(dirty_tanks4, parseInt($($('.users-aquarium')[3]).find('h1').text() * 18, 10)*1);
+    aquarium_timer5 = setInterval(dirty_tanks5, parseInt($($('.users-aquarium')[4]).find('h1').text() * 18, 10)*1);
+    aquarium_timer6 = setInterval(dirty_tanks6, parseInt($($('.users-aquarium')[5]).find('h1').text() * 18, 10)*1);
 }
 
 function tank1_needs_food() {
@@ -210,7 +210,8 @@ function make_food() {
 function food_ready() {
     $('#food-maker').draggable({
         revert: true
-    });
+    }),
+    $('#food-maker').draggable('enable');
 }
 
 function make_water() {
@@ -230,9 +231,11 @@ function make_water() {
 }
 
 function water_ready() {
-    $('#water-maker').draggable({
+    $('#water-maker').draggable(
+    {
         revert: true
     });
+    $('#water-maker').draggable('enable');
 }
 
 function dirt_color() {
@@ -287,10 +290,12 @@ $('.users-aquarium').droppable({
     drop: function(event, ui) {
         var text = (ui.draggable.context.outerText);
         var aquarium = $(event.target).find('p').text();
+        console.log(ui);
+        this_guy = $(this);
         if (text == 'water') {
-            clean_aquarium_water();
+            clean_aquarium_water(this_guy);
         } else if (text == 'food') {
-            feed_aquarium();
+            feed_aquarium(this_guy);
         } else if (text == 'fish') {
             console.log('nothing');
         } else {
@@ -315,21 +320,18 @@ function add_fish_to_aquarium(aquarium, species) {
     });
 }
 
-function clean_aquarium_water() {
-    console.log('we made it water town');
-    console.log(event);
-    console.log($(event.target).parent().find('.tank-dirtiness-bar'));
-    $(event.target).parent().find('.tank-dirtiness-bar').children().remove();
+function clean_aquarium_water(this_guy) {
+    this_guy.parent().find('.tank-dirtiness-bar').empty();
     $('#water-maker').empty();
     $('#water-maker').text('water');
+    $('#water-maker').draggable('disable');
 }
 
-function feed_aquarium() {
-    console.log('we made it to food town');
-    console.log($(event.target).parent().find('.tank-food-bar'));
-    $(event.target).parent().find('.tank-food-bar').children().remove();
+function feed_aquarium(this_guy) {
+    this_guy.parent().find('.tank-food-bar').empty();
     $('#food-maker').empty();
     $('#food-maker').text('food');
+    $('#food-maker').draggable('disable');
 }
 
 $(function() {
