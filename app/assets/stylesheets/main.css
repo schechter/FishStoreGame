@@ -24,7 +24,7 @@ body {
 
 #game {
   position: relative;
-  width: 960px;
+  width: 1040px;
   height: 700px;
   border: solid black 1px;
   margin: auto;
@@ -191,7 +191,7 @@ body {
   height: 120px;
   width: 150px;
   position:relative;
-  left:25%;
+  left:20%;
   top: -9999px;
   display: inline-block;
   background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA9_2pXqkfdGmWfKSbi9sc0g6Bndgjd4iA6ssbQTdCNhbRABRx');
@@ -229,5 +229,14 @@ body {
   width:550px;
 }
 
+#counter-bar{
+  background-color: gray;
+  height:50px;
+  width:415px;
+  display:inline-block;
+  position:relative;
+  top:80px;
+  left:-75px;
+}
 
 
