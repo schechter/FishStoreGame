@@ -40,7 +40,7 @@ class GamePagesController < ApplicationController
   def sell_fish
     @users_aquaria = Aquarium.where(user_id: current_user.id)
     fish = Fish.find(params[:stuff][:fish]).destroy
-    current_user.increase_funds(fish.species.price * 2.25)
+    current_user.increase_funds(fish.species.price * 2)
     respond_to do |format|
       format.js
     end

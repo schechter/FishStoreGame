@@ -24,14 +24,14 @@ body {
 
 #game {
   position: relative;
-  width: 960px;
-  height: 600px;
+  width: 1040px;
+  height: 700px;
   border: solid black 1px;
   margin: auto;
 }
 
 #aquaria-holder {
-  width: 570px;
+  width: 665px;
   height: 500px;
   border: dashed black 1px;
   float: left;
@@ -62,7 +62,7 @@ body {
 }
 
 .users-aquarium {
-  width: 210px;
+  width: 255px;
   height: 150px;
   float:left;
   background-color: aqua;
@@ -155,6 +155,7 @@ body {
 .fish-in-aquarium {
   cursor: pointer;
   text-indent: -9999px;
+  display:inline-block;
 }
 
 .tank-dirtiness-bar {
@@ -179,7 +180,7 @@ body {
 }
 
 #aquarium-holder {
-  width:282px;
+  width:329px;
   border: 1px solid green;
   display: inline-block;
 }
