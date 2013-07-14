@@ -39,7 +39,7 @@ class Aquarium < ActiveRecord::Base
     fishes.each do |fish|
       dirtiness += fish.adjusted_cleanliness 
     end
-    dirtiness/self.fish_capacity
+    (dirtiness/1)*self.fish_capacity
   end
 
   def hunger_level
@@ -48,6 +48,6 @@ class Aquarium < ActiveRecord::Base
     fishes.each do |fish|
       hunger += fish.adjusted_appetite
     end
-    hunger/self.fish_capacity
+    (hunger/1)*self.fish_capacity
   end
 end
