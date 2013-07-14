@@ -266,8 +266,10 @@ $('.droppable').droppable({
     drop: function(event, ui) {
         var text = (ui.draggable.context.outerText);
         var aquarium = $(event.target).find('p').text();
+        console.log(ui);
+        this_guy = $(this);
         if (text == 'water') {
-            clean_aquarium_water();
+            clean_aquarium_water(this_guy);
         } else if (text == 'food') {
             feed_aquarium();
         } else if (text == 'fish') {
@@ -295,18 +297,17 @@ function add_fish_to_aquarium(aquarium, species) {
 }
 
 function clean_aquarium_water() {
-    console.log('we made it water town');
-    console.log(event);
-    console.log($(event.target).parent().find('.tank-dirtiness-bar'));
-    $(event.target).parent().find('.tank-dirtiness-bar').empty();
+    this_guy.parent().find('.tank-dirtiness-bar').empty();
     $('#water-maker').empty();
-    $('#water-maker').text('water')
+    $('#water-maker').text('water');
 }
 
 
 
 function feed_aquarium() {
-    console.log('we made it to food town');
+this_guy.parent().find('.tank-food-bar').empty();
+    $('#food-maker').empty();
+    $('#food-maker').text('food');
 }
 
 $(function() {
