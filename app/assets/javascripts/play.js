@@ -1,4 +1,3 @@
-var counter = 0;
 var timer;
 var water_timer;
 var aquarium_timer1;
@@ -133,9 +132,10 @@ function feed_tank6(tank) {
     if (food_bar.children().length < 74) {
         food.addClass('food');
         food.appendTo(food_bar);
-    }
-        else {
-        $(tank).parent().css({'display':'none'});
+    } else {
+        $(tank).parent().css({
+            'display': 'none'
+        });
         clearInterval(aquarium_timer1);
     }
 }
