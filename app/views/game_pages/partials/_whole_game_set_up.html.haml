@@ -1,0 +1,35 @@
+#counter
+  %a.button.start-game{:href => "/game/play"} Start the game
+#aquaria-holder
+  - @users_aquaria.each do |users_aquarium|
+    .users-aquarium.droppable
+      -if users_aquarium.fishes.count == 0
+        Tank holds:
+        = users_aquarium.fish_capacity
+        fish.
+      -else
+        Tank holds: 
+        = users_aquarium.fish_capacity - users_aquarium.fishes.count
+        more fish.
+      -if users_aquarium.fishes
+        -users_aquarium.fishes.each do |fish|
+          .fish-in-aquarium
+            = image_tag fish.species.image, :class => "fish_pic"
+            fish
+            %h3.hidden= users_aquarium
+      %p.hidden= users_aquarium.id
+#supply-store
+  #aquaria-supply
+    - @aquaria.each do |aquaria|
+      .aquarium{:'data-id' => aquaria.id}
+        Buy a Tank for
+        =aquaria.fish_capacity
+        Fish:
+        =number_to_currency(aquaria.price)
+  #species-supply
+    - @species.each do |species|
+      .fish-div.draggable
+        .hidden 
+          species 
+        = species.name         
+= javascript_include_tag 'play'

@@ -16,10 +16,10 @@ body {
 }
 
 #stats-container {
-  width: 75%;
-  height: 450px;
+  width: 850px;
+  height: 550px;
   margin: auto;
-  background-color: pink;
+  background-color: #88E5FF;
 }
 
 #game {
@@ -202,6 +202,17 @@ body {
   font: 18px;
 }
 
+#nemo-high-five {
+  height: 230px;
+  width: 300px;
+  float:right;
+  background-image: url("http://25.media.tumblr.com/f4739ffa781c2c3290739ef4e08c9e27/tumblr_mpmfb5X18V1s7r5iqo1_400.gif")
+}
+
+#stats-text {
+  float:left;
+  width:550px;
+}
 
 
 
