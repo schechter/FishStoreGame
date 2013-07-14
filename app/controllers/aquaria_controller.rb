@@ -6,9 +6,11 @@ class AquariaController < ApplicationController
       unless current_user.aquaria.count == 6
         current_user.decrease_funds(aquarium.price)
         current_user.aquaria << aquarium
-        p current_user.aquaria.count
       end
     end
-    redirect_to :back
+     @users_aquaria = Aquarium.where(user_id: current_user.id)
+    respond_to do |format|
+      format.js
+    end
   end
 end

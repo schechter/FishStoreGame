@@ -366,6 +366,18 @@ function sell_fish_to_customer(fish) {
     });
 }
 
+function add_aquarium_to_holder() {
+    console.log($(this).data().id);
+    var settings = {
+        id: $(this).data().id
+    };
+    $.ajax({
+        type: "POST",
+        data: settings,
+        url: '/aquaria/'+ $(this).data().id+ '/sell_me'
+    });
+}
+
 $('.users-aquarium').droppable({
     drop: function(event, ui) {
         var text = (ui.draggable.context.outerText);
@@ -417,6 +429,7 @@ $(function() {
     $("#aquaria-supply").on('click', "#water-maker", make_water);
     $("#species-supply").on('mouseover', ".fish-div", species_draggable);
     $("#aquaria-holder").on('mouseover', '.fish-in-aquarium', fish_draggable);
+    $('#aquaria-supply').on('click', '.aquarium', add_aquarium_to_holder)
     tanks_get_dirty_timer();
     tanks_need_food_timer();
 

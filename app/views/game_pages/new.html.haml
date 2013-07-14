@@ -21,14 +21,12 @@
         %p.hidden= users_aquarium.id
   #supply-store
     #aquaria-supply
-      .aquarium
-        This one hold 3 fish
-      .aquarium
-        This one hold 5 fish
-      .aquarium
-        This one hold 8 fish
-      .aquarium
-        This one hold 15 fish
+      - @aquaria.each do |aquaria|
+        .aquarium{:'data-id' => aquaria.id}
+          Buy a Tank for
+          =aquaria.fish_capacity
+          Fish:
+          =number_to_currency(aquaria.price)
     #species-supply
       - @species.each do |species|
         .fish-div.draggable
@@ -36,3 +34,6 @@
             species 
           = species.name         
 = javascript_include_tag 'play'
+
+
+/ = link_to "Buy an Aquarium that can hold #{aquaria.fish_capacity} fish.", sell_me_path(id: aquaria.id), method: :post, class: '.aquarium'

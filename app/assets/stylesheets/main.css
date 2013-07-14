@@ -194,7 +194,6 @@ body {
 .aquarium {
   height: 95px;
   width:165px;
-  border: solid black;
   display: inline-block;
   border-bottom-right-radius: 55px; 
   border-bottom-left-radius: 55px;
