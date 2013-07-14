@@ -3,12 +3,12 @@
 #stats-container
   %h1
     Done with your day at the fish store.
+  %h4
+    You now have
+    = number_to_currency(@user.funds)
+    = number_to_currency(@user.funds - 250)
+    from where you started.
   #stats-text
-    %h4
-      You now have
-      = number_to_currency(@user.funds)
-      = number_to_currency(@user.funds - 250)
-      from where you started.
     %h4
       You had
     - @users_fish.each do |fish|

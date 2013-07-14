@@ -190,7 +190,7 @@ body {
   width: 120px;
   position:relative;
   left:25%;
-  /*top: -9999px;*/
+  top: -9999px;
   display: inline-block;
   background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA9_2pXqkfdGmWfKSbi9sc0g6Bndgjd4iA6ssbQTdCNhbRABRx');
   background-size: cover;
@@ -215,8 +215,9 @@ body {
 }
 
 #nemo-high-five {
-  height: 230px;
+  height: 200px;
   width: 300px;
+  margin-right: 10px;
   float:right;
   background-image: url("http://25.media.tumblr.com/f4739ffa781c2c3290739ef4e08c9e27/tumblr_mpmfb5X18V1s7r5iqo1_400.gif")
 }
