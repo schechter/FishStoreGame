@@ -261,8 +261,29 @@ function fish_draggable() {
         revert: true
     });
 }
+$('#customer').droppable({
+    drop: function(event, ui) {
+        var fish = (ui.draggable.context.dataset.id);
+        console.log(ui.draggable.context.dataset.id);
+        sell_fish_to_customer(fish);
+    }
+});
 
-$('.droppable').droppable({
+function sell_fish_to_customer(fish) {
+        var settings = {
+        stuff: {
+           fish: fish
+        }
+    };
+    $.ajax({
+        type: 'POST',
+        data: settings,
+        url: '/game/sell_fish',
+        dataType: 'script'
+    });
+}
+
+$('.users-aquarium').droppable({
     drop: function(event, ui) {
         var text = (ui.draggable.context.outerText);
         var aquarium = $(event.target).find('p').text();
@@ -298,7 +319,7 @@ function clean_aquarium_water() {
     console.log('we made it water town');
     console.log(event);
     console.log($(event.target).parent().find('.tank-dirtiness-bar'));
-    $(event.target).parent().find('.tank-dirtiness-bar').empty();
+    $(event.target).parent().find('.tank-dirtiness-bar').children().remove();
     $('#water-maker').empty();
     $('#water-maker').text('water');
 }
@@ -306,8 +327,7 @@ function clean_aquarium_water() {
 function feed_aquarium() {
     console.log('we made it to food town');
     console.log($(event.target).parent().find('.tank-food-bar'));
-    $(event.target).parent().find('.tank-food-bar').empty();
-    console.log(event);
+    $(event.target).parent().find('.tank-food-bar').children().remove();
     $('#food-maker').empty();
     $('#food-maker').text('food');
 }

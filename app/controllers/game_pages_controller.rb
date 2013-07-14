@@ -38,6 +38,16 @@ class GamePagesController < ApplicationController
     end
   end
 
+  def sell_fish
+    p params
+    @users_aquaria = Aquarium.where(user_id: current_user.id)
+    fish = Fish.find(params[:stuff][:fish]).destroy
+    current_user.increase_funds(fish.species.price)
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def paypal
   end
 

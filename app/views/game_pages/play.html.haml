@@ -1,14 +1,16 @@
 #game
-  #counter
+  #customer.droppable
+    customer
   #aquaria-holder
     - @users_aquaria.each do |users_aquarium|
       #aquarium-holder
         .users-aquarium.droppable{:'data-id' => users_aquarium.id}
           -if users_aquarium.fishes
             -users_aquarium.fishes.each do |fish|
-              .fish-in-aquarium 
+              .fish-in-aquarium{:'data-id' => fish.id}
                 = image_tag fish.species.image, :class => "fish_pic"
                 fish
+                %h3.hidden= users_aquarium
           %p.hidden= users_aquarium.id
           %h1.hidden= users_aquarium.dirtiness_level
           %h2.hidden= users_aquarium.hunger_level

@@ -11,6 +11,7 @@ FishStoreApp::Application.routes.draw do
   match 'fish/:id/buy_me' => 'fish#buy_me', :as => :buy_me
   match 'aquaria/:id/sell_me' => 'aquaria#sell_me', :as => :sell_me
   match 'game/populate_aquarium' => 'game_pages#populate_aquarium', :as => :populate_aquarium
+  match 'game/sell_fish' => 'game_pages#sell_fish', :as => :sell_fish
   match 'game/get_dirtiness' => 'game_pages#get_dirtiness', :as => :get_dirtiness
 
   resources :fish, only: [:new, :create, :destroy]

@@ -174,3 +174,9 @@ border: dashed green;
   border: 1px solid green;
   display: inline-block;
 }
+
+#customer {
+  background-color: gray;
+  height: 50px;
+  width: 200px;
+}
