@@ -14,3 +14,13 @@ $('.droppable').droppable({
         }
     }
 });
+
+$('#customer').droppable({
+    drop: function(event, ui) {
+        var fish = (ui.draggable.context.dataset.id);
+        (ui.draggable).css({
+            'display': 'none'
+        });
+        sell_fish_to_customer(fish);
+    }
+});
