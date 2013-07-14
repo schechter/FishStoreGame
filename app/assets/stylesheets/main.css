@@ -16,10 +16,10 @@ body {
 }
 
 #stats-container {
-width: 75%;
-height: 450px;
-margin: auto;
-background-color: pink;
+  width: 75%;
+  height: 450px;
+  margin: auto;
+  background-color: pink;
 }
 
 #game {
@@ -47,13 +47,13 @@ background-color: pink;
 }
 
 #aquaria-supply {
-height:225px;
-border: dashed yellow;
+  height:225px;
+  border: dashed yellow;
 }
 
 #species-supply {
-height: 375px;
-border: dashed green;
+  height: 375px;
+  border: dashed green;
 }
 
 #counter {
@@ -91,17 +91,19 @@ border: dashed green;
   position:relative;
   top: 25%;
   left: 35%;
-  height: 62px;
+  height: 92px;
   width: 62px;
   border:1px dashed gray;
   text-indent: -9999px;
+  vertical-align: bottom;
+  display: table-cell;
 }
 
 #water-maker {
   position:relative;
   top: 25%;
   left: 35%;
-  height: 60px;
+  height: 90px;
   width: 60px;
   border:1px dashed blue;
   text-indent: -9999px;
@@ -119,7 +121,7 @@ border: dashed green;
 }
 
 .pellet {
-  float:left;
+  float: right; 
   width: 2px;
   height: 2px;
 }
@@ -159,6 +161,12 @@ border: dashed green;
   height:150px;
   width: 30px;
   border:1px dashed brown;
+/*  float:left;*/
+  vertical-align:bottom;
+  display:table-cell;
+}
+
+.dirtiness-bar-holder{
   float:left;
 }
 
