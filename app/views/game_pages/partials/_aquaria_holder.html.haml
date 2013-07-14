@@ -11,7 +11,7 @@
     -if users_aquarium.fishes
       -users_aquarium.fishes.each do |fish|
         .fish-in-aquarium
-          = fish.name
-          the 
-          = fish.species.name
+          = image_tag fish.species.image, :class => "fish_pic"
+          fish
+          %h3.hidden= users_aquarium
     %p.hidden= users_aquarium.id

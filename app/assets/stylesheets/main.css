@@ -152,6 +152,7 @@ border: dashed green;
 
 .fish-in-aquarium {
   cursor: pointer;
+  text-indent: -9999px;
 }
 
 .tank-dirtiness-bar {
