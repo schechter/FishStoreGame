@@ -304,7 +304,6 @@ function dirty_tank6(tank) {
 
 function make_food() {
     timer = setInterval(add_pellet, 1);
-
     function add_pellet() {
         var pellet = $('<div>');
         pellet.addClass('pellet');
@@ -328,7 +327,6 @@ function food_ready() {
 function make_water() {
     water_timer = setInterval(add_water, 1);
     start_round();
-
     function add_water() {
         var water = $('<div>');
         water.addClass('water');

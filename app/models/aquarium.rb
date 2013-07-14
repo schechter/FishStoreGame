@@ -18,7 +18,10 @@ class Aquarium < ActiveRecord::Base
   belongs_to :user
   has_many :fishes
 
-  #Aquarium.select('distinct fish_capacity').where(user_id: nil) #try this to replace method below
+
+# def self.unique_unowned_aquaria
+#   aquaria = Aquarium.select('distinct fish_capacity').where(user_id: nil) #try this to replace method below
+# end
 
   def self.unique_unowned_aquaria
     capacities = []
@@ -65,10 +68,7 @@ class Aquarium < ActiveRecord::Base
     fishes = []
     counter = 0
     aquariums = current_user.aquaria
-    p '===============users aquaria ================='
-    p aquariums
     aquariums.each do |aq|
-      p counter
       fishes << aq.fishes
       counter +=1
     end
