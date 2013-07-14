@@ -1,4 +1,5 @@
 $('#aquaria-holder').empty().append('<%=j render partial: 'game_pages/partials/aquaria_holder' %>')
+$('#funds-holder').empty().append('<%=j render partial: 'game_pages/partials/funds_holder' %>')
 
 $('.droppable').droppable({
     drop: function(event, ui) {
@@ -13,3 +14,4 @@ $('.droppable').droppable({
         }
     }
 });
+

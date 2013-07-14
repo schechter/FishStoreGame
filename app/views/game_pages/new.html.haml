@@ -1,6 +1,11 @@
 #game
   #counter
     %a.button.start-game{:href => "/game/play"} Start the game
+    #funds-holder
+      #funds
+        %p Current Funds:
+        %p 
+          = number_to_currency(current_user.funds) 
   #aquaria-holder
     - @users_aquaria.each do |users_aquarium|
       .users-aquarium.droppable

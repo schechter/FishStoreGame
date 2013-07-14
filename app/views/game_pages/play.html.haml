@@ -2,6 +2,11 @@
   #counter 
     #customer.droppable
       customer
+    #funds-holder
+      #funds
+        %p Current Funds:
+        %p 
+          = number_to_currency(current_user.funds) 
   #aquaria-holder
     - @users_aquaria.each do |users_aquarium|
       #aquarium-holder
@@ -28,5 +33,3 @@
         food
 
 = javascript_include_tag "play"
-
-

@@ -24,9 +24,4 @@
         %li.active
         - if current_user
           %li
-            %a Funds:
-          %li
-            %a
-              = number_to_currency(current_user.funds)
-          %li
             = link_to 'sign_out', destroy_user_session_path, :method => :delete
