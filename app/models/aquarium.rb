@@ -34,23 +34,45 @@ class Aquarium < ActiveRecord::Base
   end
 
   def dirtiness_level
-    fishes = self.fishes
-    dirtiness = 0
-    fishes.each do |fish|
-      dirtiness += fish.adjusted_cleanliness
+    if self.fishes.count > 0
+      fishes = self.fishes
+      dirtiness = 0
+      fishes.each do |fish|
+        dirtiness += fish.adjusted_cleanliness
+      end
+      dirtiness = dirtiness / fishes.count
+      dirtiness * ( (2 * self.fish_capacity) / fishes.count)
+    else
+      90000
     end
-    dirtiness = dirtiness / fishes.count
-    dirtiness * ( (2 * self.fish_capacity) / fishes.count)
   end
 
   def hunger_level
-    fishes = self.fishes
-    hunger = 0
-    fishes.each do |fish|
-      hunger += fish.adjusted_appetite
+    if self.fishes.count > 0
+      fishes = self.fishes
+      hunger = 0
+      fishes.each do |fish|
+        hunger += fish.adjusted_appetite
+      end
+      hunger = hunger / fishes.count
+      hunger *  ( (2 * self.fish_capacity ) / fishes.count)
+    else
+      900000
     end
-    hunger = hunger / fishes.count
-    hunger *  ( (2 * self.fish_capacity ) / fishes.count)
+  end
+
+  def self.which_fish(current_user)
+    fishes = []
+    counter = 0
+    aquariums = current_user.aquaria
+    p '===============users aquaria ================='
+    p aquariums
+    aquariums.each do |aq|
+      p counter
+      fishes << aq.fishes
+      counter +=1
+    end
+    fishes.flatten
   end
 
   def self.return_us(current_user)

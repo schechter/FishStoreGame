@@ -8,7 +8,10 @@ class AquariaController < ApplicationController
         current_user.aquaria << aquarium
       end
     end
-     @users_aquaria = Aquarium.where(user_id: current_user.id)
+    @species = Species.all
+    @fish = Fish.all
+    @aquaria = Aquarium.unique_unowned_aquaria 
+    @users_aquaria = Aquarium.where(user_id: current_user.id)
     respond_to do |format|
       format.js
     end

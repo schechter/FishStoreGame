@@ -47,10 +47,11 @@ class GamePagesController < ApplicationController
   end
 
   def round_over
-    p '=============================  GAME OVER MAN =================='
+    @users_fish = Aquarium.which_fish(current_user)
+    p '=================@users_fish============='
+    p @users_fish
     Aquarium.return_us(current_user);
-    # Fish.kill_us
-
+    @user = current_user
   end
 
   def paypal
