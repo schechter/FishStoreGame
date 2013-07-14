@@ -21,9 +21,14 @@
         %p.hidden= users_aquarium.id
   #supply-store
     #aquaria-supply
-      - @aquaria.each do |aquaria|
-        .aquarium
-          = link_to "Buy an Aquarium that can hold #{aquaria.fish_capacity} fish.", sell_me_path(id: aquaria.id), method: :post, class: '.aquarium'
+      .aquarium
+        This one hold 3 fish
+      .aquarium
+        This one hold 5 fish
+      .aquarium
+        This one hold 8 fish
+      .aquarium
+        This one hold 15 fish
     #species-supply
       - @species.each do |species|
         .fish-div.draggable
