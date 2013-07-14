@@ -28,25 +28,24 @@ clearInterval(game_over_man);
             url: '/game/round_over',
             dataType: 'script'
         });
-   
 }
 
 function tanks_need_food_timer() {
-    hunger_timer1 = setInterval(tank1_needs_food, parseInt($($('.users-aquarium')[0]).find('h2').text() * 18, 10) * 1);
-    hunger_timer2 = setInterval(tank2_needs_food, parseInt($($('.users-aquarium')[1]).find('h2').text() * 18, 10) * 1);
-    hunger_timer3 = setInterval(tank3_needs_food, parseInt($($('.users-aquarium')[2]).find('h2').text() * 18, 10) * 1);
-    hunger_timer4 = setInterval(tank4_needs_food, parseInt($($('.users-aquarium')[3]).find('h2').text() * 18, 10) * 1);
-    hunger_timer5 = setInterval(tank5_needs_food, parseInt($($('.users-aquarium')[4]).find('h2').text() * 18, 10) * 1);
-    hunger_timer6 = setInterval(tank6_needs_food, parseInt($($('.users-aquarium')[5]).find('h2').text() * 18, 10) * 1);
+    hunger_timer1 = setInterval(tank1_needs_food, parseInt($($('.users-aquarium')[0]).find('h2').text() * 5, 10) + 300);
+    hunger_timer2 = setInterval(tank2_needs_food, parseInt($($('.users-aquarium')[1]).find('h2').text() * 5, 10) + 300);
+    hunger_timer3 = setInterval(tank3_needs_food, parseInt($($('.users-aquarium')[2]).find('h2').text() * 5, 10) + 300);
+    hunger_timer4 = setInterval(tank4_needs_food, parseInt($($('.users-aquarium')[3]).find('h2').text() * 5, 10) + 300);
+    hunger_timer5 = setInterval(tank5_needs_food, parseInt($($('.users-aquarium')[4]).find('h2').text() * 5, 10) + 300);
+    hunger_timer6 = setInterval(tank6_needs_food, parseInt($($('.users-aquarium')[5]).find('h2').text() * 5, 10) + 300);
 }
 
 function tanks_get_dirty_timer() {
-    aquarium_timer1 = setInterval(dirty_tanks1, parseInt($($('.users-aquarium')[0]).find('h1').text() * 18, 10) / 10);
-    aquarium_timer2 = setInterval(dirty_tanks2, parseInt($($('.users-aquarium')[1]).find('h1').text() * 18, 10) / 10);
-    aquarium_timer3 = setInterval(dirty_tanks3, parseInt($($('.users-aquarium')[2]).find('h1').text() * 18, 10) / 10);
-    aquarium_timer4 = setInterval(dirty_tanks4, parseInt($($('.users-aquarium')[3]).find('h1').text() * 18, 10) / 10);
-    aquarium_timer5 = setInterval(dirty_tanks5, parseInt($($('.users-aquarium')[4]).find('h1').text() * 18, 10) / 10);
-    aquarium_timer6 = setInterval(dirty_tanks6, parseInt($($('.users-aquarium')[5]).find('h1').text() * 18, 10) / 10);
+    aquarium_timer1 = setInterval(dirty_tanks1, parseInt($($('.users-aquarium')[0]).find('h1').text() * 5, 10) + 300);
+    aquarium_timer2 = setInterval(dirty_tanks2, parseInt($($('.users-aquarium')[1]).find('h1').text() * 5, 10) + 300);
+    aquarium_timer3 = setInterval(dirty_tanks3, parseInt($($('.users-aquarium')[2]).find('h1').text() * 5, 10) + 300);
+    aquarium_timer4 = setInterval(dirty_tanks4, parseInt($($('.users-aquarium')[3]).find('h1').text() * 5, 10) + 300);
+    aquarium_timer5 = setInterval(dirty_tanks5, parseInt($($('.users-aquarium')[4]).find('h1').text() * 5, 10) + 300);
+    aquarium_timer6 = setInterval(dirty_tanks6, parseInt($($('.users-aquarium')[5]).find('h1').text() * 5, 10) + 300);
 }
 
 function tank1_needs_food() {
@@ -274,7 +273,6 @@ function dirty_tank6(tank) {
 
 function make_food() {
     timer = setInterval(add_pellet, 1);
-
     function add_pellet() {
         var pellet = $('<div>');
         pellet.addClass('pellet');
@@ -319,7 +317,7 @@ function water_ready() {
 }
 
 function dirt_color() {
-    var color = "rgb(" + _.random(175, 255) + "," + _.random(0, 80) + "," + _.random(0, 80) + ")";
+    var color = "rgb(" + _.random(80, 180) + "," + _.random(40, 150) + "," + _.random(40, 80) + ")";
     return color;
 }
 
@@ -373,6 +371,7 @@ $('.users-aquarium').droppable({
         var text = (ui.draggable.context.outerText);
         var aquarium = $(event.target).find('p').text();
         this_guy = $(this);
+        console.log(this_guy);
         if (text == 'water') {
             clean_aquarium_water(this_guy);
         } else if (text == 'food') {

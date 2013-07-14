@@ -39,7 +39,8 @@ class Aquarium < ActiveRecord::Base
     fishes.each do |fish|
       dirtiness += fish.adjusted_cleanliness
     end
-    (dirtiness/1)*self.fish_capacity
+    dirtiness = dirtiness / fishes.count
+    dirtiness * ( (2 * self.fish_capacity) / fishes.count)
   end
 
   def hunger_level
@@ -48,7 +49,8 @@ class Aquarium < ActiveRecord::Base
     fishes.each do |fish|
       hunger += fish.adjusted_appetite
     end
-    (hunger/1)*self.fish_capacity
+    hunger = hunger / fishes.count
+    hunger *  ( (2 * self.fish_capacity ) / fishes.count)
   end
 
   def self.return_us(current_user)
