@@ -317,7 +317,7 @@ function water_ready() {
 }
 
 function dirt_color() {
-    var color = "rgb(" + _.random(80, 180) + "," + _.random(40, 150) + "," + _.random(40, 80) + ")";
+    var color = "rgb(" + _.random(30, 80) + "," + _.random(80, 180) + "," + _.random(19, 90) + ")";
     return color;
 }
 
