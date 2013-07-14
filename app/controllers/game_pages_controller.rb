@@ -29,10 +29,8 @@ class GamePagesController < ApplicationController
     aquarium = Aquarium.find(params[:stuff][:aquarium])
     species = Species.find_by_name(params[:stuff][:species])
     fish = Fish.create_fish(species)
-
     fish.add_fish_to_aquarium(aquarium)
     current_user.decrease_funds(species.price)
-
     respond_to do |format|
       format.js
     end
@@ -46,6 +44,13 @@ class GamePagesController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+
+  def round_over
+    p '=============================  GAME OVER MAN =================='
+    Aquarium.return_us(current_user);
+    # Fish.kill_us
+
   end
 
   def paypal

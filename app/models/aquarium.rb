@@ -18,7 +18,7 @@ class Aquarium < ActiveRecord::Base
   belongs_to :user
   has_many :fishes
 
-#Aquarium.select('distinct fish_capacity').where(user_id: nil) #try this to replace method below
+  #Aquarium.select('distinct fish_capacity').where(user_id: nil) #try this to replace method below
 
   def self.unique_unowned_aquaria
     capacities = []
@@ -37,7 +37,7 @@ class Aquarium < ActiveRecord::Base
     fishes = self.fishes
     dirtiness = 0
     fishes.each do |fish|
-      dirtiness += fish.adjusted_cleanliness 
+      dirtiness += fish.adjusted_cleanliness
     end
     (dirtiness/1)*self.fish_capacity
   end
@@ -50,4 +50,22 @@ class Aquarium < ActiveRecord::Base
     end
     (hunger/1)*self.fish_capacity
   end
+
+  def self.return_us(current_user)
+    returns = current_user.aquaria
+    returns.each do |aq_return|
+      current_user.increase_funds(aq_return.price)
+    end
+    aquariums = Aquarium.all
+    aquariums.each do |aq|
+      aq.user_id = nil
+      aq.save
+    end
+    fishes =  Fish.all
+    fishes.each do |fish|
+      fish.aquarium_id = nil
+      fish.save
+    end
+  end
+
 end

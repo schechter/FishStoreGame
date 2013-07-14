@@ -13,6 +13,23 @@ var hunger_timer3;
 var hunger_timer4;
 var hunger_timer5;
 var hunger_timer6;
+var game_over_man;
+
+
+function start_round(){
+    game_over_man = setInterval(round_over, 90000);
+}
+
+function round_over() {
+clearInterval(game_over_man);
+    $.ajax({
+            type: 'POST',
+            data: 'game over man',
+            url: '/game/round_over',
+            dataType: 'script'
+        });
+   
+}
 
 function tanks_need_food_timer() {
     hunger_timer1 = setInterval(tank1_needs_food, parseInt($($('.users-aquarium')[0]).find('h2').text() * 18, 10) * 1);
@@ -280,7 +297,7 @@ function food_ready() {
 
 function make_water() {
     water_timer = setInterval(add_water, 1);
-
+    start_round();
     function add_water() {
         var water = $('<div>');
         water.addClass('water');
@@ -330,7 +347,6 @@ function fish_draggable() {
 $('#customer').droppable({
     drop: function(event, ui) {
         var fish = (ui.draggable.context.dataset.id);
-        console.log(ui.draggable);
         (ui.draggable).css({
             'display': 'none'
         });
@@ -356,14 +372,12 @@ $('.users-aquarium').droppable({
     drop: function(event, ui) {
         var text = (ui.draggable.context.outerText);
         var aquarium = $(event.target).find('p').text();
-        console.log(ui);
         this_guy = $(this);
         if (text == 'water') {
             clean_aquarium_water(this_guy);
         } else if (text == 'food') {
             feed_aquarium(this_guy);
         } else if (text == 'fish') {
-            console.log('nothing');
         } else {
             add_fish_to_aquarium(aquarium, text);
         }
@@ -371,7 +385,6 @@ $('.users-aquarium').droppable({
 });
 
 function add_fish_to_aquarium(aquarium, species) {
-    console.log('we made it to fish town');
     var settings = {
         stuff: {
             aquarium: aquarium,
@@ -407,4 +420,6 @@ $(function() {
     $("#aquaria-holder").on('mouseover', '.fish-in-aquarium', fish_draggable);
     tanks_get_dirty_timer();
     tanks_need_food_timer();
+
+
 });
