@@ -1,3 +1,6 @@
+var customer_timer = 0;
+var customer_interval = 6;
+var master_time = 0;
 var timer;
 var water_timer;
 var aquarium_timer1;
@@ -16,18 +19,46 @@ var hunger_timer6;
 var game_over_man;
 
 
-function start_round(){
-    game_over_man = setInterval(round_over, 90000);
+function start_round() {
+    master_timer = setInterval(time_master, 1000);
+}
+
+function time_master() {
+    customer_timer++;
+    console.log(customer_timer);
+    master_time++;
+    console.log(master_time);
+    if (master_time == 180) {
+        round_over();
+    }
+    if (customer_timer  == customer_interval) {
+        customer_enters();
+    }
+}
+
+function customer_enters() {
+    $('#customer').css({
+        'top': '0px'
+    });
+    setTimeout(customer_leaves, 1000 * (Math.floor(1+ Math.random()*4)));
+}
+
+function customer_leaves() {
+    $('#customer').css({
+        'top': '-9999px'
+    });
+    customer_timer = 1;
+    customer_interval = 4;
 }
 
 function round_over() {
-clearInterval(game_over_man);
+    clearInterval(game_over_man);
     $.ajax({
-            type: 'POST',
-            data: 'game over man',
-            url: '/game/round_over',
-            dataType: 'script'
-        });
+        type: 'POST',
+        data: 'game over man',
+        url: '/game/round_over',
+        dataType: 'script'
+    });
 }
 
 function tanks_need_food_timer() {
@@ -273,6 +304,7 @@ function dirty_tank6(tank) {
 
 function make_food() {
     timer = setInterval(add_pellet, 1);
+
     function add_pellet() {
         var pellet = $('<div>');
         pellet.addClass('pellet');
@@ -296,6 +328,7 @@ function food_ready() {
 function make_water() {
     water_timer = setInterval(add_water, 1);
     start_round();
+
     function add_water() {
         var water = $('<div>');
         water.addClass('water');
@@ -376,8 +409,7 @@ $('.users-aquarium').droppable({
             clean_aquarium_water(this_guy);
         } else if (text == 'food') {
             feed_aquarium(this_guy);
-        } else if (text == 'fish') {
-        } else {
+        } else if (text == 'fish') {} else {
             add_fish_to_aquarium(aquarium, text);
         }
     }
@@ -419,6 +451,4 @@ $(function() {
     $("#aquaria-holder").on('mouseover', '.fish-in-aquarium', fish_draggable);
     tanks_get_dirty_timer();
     tanks_need_food_timer();
-
-
 });

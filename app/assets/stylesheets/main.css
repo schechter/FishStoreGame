@@ -188,6 +188,8 @@ body {
   background-color: gray;
   height: 50px;
   width: 200px;
+  position:relative;
+  top:-9999px;
 }
 
 
