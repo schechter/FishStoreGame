@@ -9,8 +9,6 @@
   %body
     #nav-holder
       = render partial: '/layouts/partials/nav'
-    %p.notice= notice
-    %p.alert= alert
     = yield
     :javascript
       $(document).foundation();
