@@ -12,16 +12,16 @@
     %ul.left
       %li.divider
         %li
-          = link_to 'game setup', game_new_path
-        %li
-          = link_to 'stats', game_stats_path
-        %li
           = link_to 'paypal', paypal_stuff_path
-        %li
-          = link_to 'fish', new_fish_path
-        %li
-          = link_to 'new game', game_play_path
+        -if notice
+          %li
+            = link_to notice, new_user_session_path
+        - if alert 
+          %li
+            = link_to alert, new_user_session_path
         %li.active
         - if current_user
           %li
-            = link_to 'sign_out', destroy_user_session_path, :method => :delete
+            = link_to 'Sign Out', destroy_user_session_path, :method => :delete
+          %li
+            = link_to "Connect with Twitter", user_omniauth_authorize_path(:twitter) 
