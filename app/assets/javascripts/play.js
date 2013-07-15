@@ -38,7 +38,7 @@ function time_master() {
 
 function customer_enters() {
     $('#customer').css({
-        'top': '0px'
+        'top': '30%'
     });
     setTimeout(customer_leaves, 1000 * (Math.floor(1+ Math.random()*4)));
 }

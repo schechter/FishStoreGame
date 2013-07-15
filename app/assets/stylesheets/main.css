@@ -1,6 +1,7 @@
 body {
   width: 1080px;
   background: #272822 !important;
+  font-family: Georgia;
 }
 
 
@@ -38,6 +39,8 @@ body {
   border: dashed black 1px;
   float: left;
   bottom: 5px;
+  position:relative;
+  top:100px;
 }
 
 #supply-store {
@@ -69,7 +72,6 @@ body {
   float:left;
   border-bottom-right-radius: 35px; 
   border-bottom-left-radius: 35px;
-  /*background-color: aqua;*/
   margin: 5px;
   display: inline-block;
   background-image: url('http://walldeco.com.ua/images/phocagallery/sea/thumbs/phoca_thumb_m_4584.jpg')
@@ -166,8 +168,6 @@ body {
 .tank-dirtiness-bar {
   height:150px;
   width: 30px;
-  border:1px dashed brown;
-/*  float:left;*/
   vertical-align:bottom;
   display:table-cell;
 }
@@ -179,7 +179,6 @@ body {
 .tank-food-bar {
   height:150px;
   width: 30px;
-  border:1px dashed gray;
   background-image:url("http://thefishshack.com/wp-content/uploads/2011/06/flake-food-300x225.jpg");
   float:right;
 }
@@ -192,10 +191,10 @@ body {
 
 #customer {
   background-color: gray;
-  height: 100px;
-  width: 120px;
+  height: 120px;
+  width: 150px;
   position:relative;
-  left:25%;
+  left:20%;
   top: -9999px;
   display: inline-block;
   background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA9_2pXqkfdGmWfKSbi9sc0g6Bndgjd4iA6ssbQTdCNhbRABRx');
@@ -230,7 +229,7 @@ body {
 
 #stats-text {
   float:left;
-  width:550px;
+  width:490px;
 }
 
 .bottom-nav {
@@ -249,3 +248,27 @@ body {
   margin:0 15%;
 }
 
+#counter-bar{
+  background-color: gray;
+  height:50px;
+  width:415px;
+  display:inline-block;
+  position:relative;
+  top:80px;
+  left:-75px;
+}
+
+#water-maker-info, #food-maker-info {
+  padding:2px;
+  height: 70px;
+  width: 225px;
+  background-color: #88E5FF;
+  position:relative;
+  top: -10%;
+  left:30%;
+  font-size:12px;
+}
+
+#food-maker-info {
+  background-color: orange;
+}
