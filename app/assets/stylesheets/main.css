@@ -35,7 +35,7 @@
 
 #aquaria-holder {
   width: 665px;
-  height: 500px;
+  height: 545px;
   float: left;
   bottom: 5px;
   position:relative;
@@ -46,7 +46,7 @@
 #supply-store {
   position:relative;
   width: 350px;
-  height: 600px;
+  height: 545px;
   float: right;
   top: 10px;
   background: #006cff;
@@ -71,12 +71,13 @@
   float:left;
   border-bottom-right-radius: 35px; 
   border-bottom-left-radius: 35px;
-  margin: 5px;
+  margin: 25px 5px 5px 5px;
   display: inline-block;
   background-image: url('http://walldeco.com.ua/images/phocagallery/sea/thumbs/phoca_thumb_m_4584.jpg')
 }
 
 .fish-div{
+  border-radius:3px;
   font-size:10px;
   padding-left: 40px;
   height:50px;
