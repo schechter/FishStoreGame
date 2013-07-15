@@ -24,12 +24,12 @@ function start_round() {
 }
 
 function time_master() {
-    fish_bob();
+    // fish_bob();
     customer_timer++;
     console.log(customer_timer);
     master_time++;
     console.log(master_time);
-    if (master_time == 180) {
+    if (master_time == 90) {
         round_over();
     }
     if (customer_timer == customer_interval) {
@@ -47,7 +47,7 @@ function time_master() {
 
 function customer_enters() {
     $('#customer').css({
-        'top': '30%'
+        'top': '5%'
     });
     setTimeout(customer_leaves, 1000 * (Math.floor(1 + Math.random() * 4)));
 }
