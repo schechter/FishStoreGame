@@ -279,3 +279,8 @@
 #food-maker-info {
   background-color: orange;
 }
+
+#start-button{
+  margin-left: 56px !important;
+  margin-top: 30px !important;
+}
