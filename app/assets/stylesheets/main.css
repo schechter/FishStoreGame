@@ -1,10 +1,12 @@
 body {
   width: 1080px;
+  background: #272822 !important;
 }
 
+
 #bottom-buttons {
-  width: 85%;
-  margin: auto;
+  position:absolute;
+  bottom: 5px;
 }
 
 .box {
@@ -65,9 +67,12 @@ body {
   width: 255px;
   height: 150px;
   float:left;
-  background-color: aqua;
+  border-bottom-right-radius: 35px; 
+  border-bottom-left-radius: 35px;
+  /*background-color: aqua;*/
   margin: 5px;
   display: inline-block;
+  background-image: url('http://walldeco.com.ua/images/phocagallery/sea/thumbs/phoca_thumb_m_4584.jpg')
 }
 
 .fish-div{
@@ -228,5 +233,19 @@ body {
   width:550px;
 }
 
+.bottom-nav {
+  margin: 0 17px !important;
+}
 
+#instruction-text {
+  margin-left:10px;
+}
+
+.set-up-instruction {
+  margin-left: 10px;
+}
+
+#instruction-text h1 {
+  margin:0 15%;
+}
 
