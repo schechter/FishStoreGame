@@ -2,6 +2,7 @@
   width: 1080px;
   background: #66C498;
   font-family: Georgia;
+  margin:auto;
 }
 
 
@@ -209,9 +210,9 @@
   height: 95px;
   width:165px;
   display: inline-block;
-  border-bottom-right-radius: 55px; 
-  border-bottom-left-radius: 55px;
-  background-image: url('https://photos-b.xx.fbcdn.net/hphotos-ash4/230751_510146272359319_1193536281_a.jpg');
+  border-bottom-right-radius: 40px; 
+  border-bottom-left-radius: 40px;
+  background-image: url('http://widescreen-wallpaper.eu/thumbs/aquarium_colors-t1.jpg');
   margin: 8px 2px;
   font-size: 18px;
   color:white;

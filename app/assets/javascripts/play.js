@@ -37,13 +37,13 @@ function time_master() {
     }
 }
 
-function fish_bob() {
-    $(".fish-in-aquarium").animate({
-        top: "184px"
-    }, 400).animate({
-        top: " "
-    }, 370);
-}
+// function fish_bob() {
+//     $(".fish-in-aquarium").animate({
+//         top: "18px"
+//     }, 400).animate({
+//         top: " "
+//     }, 370);
+// }
 
 function customer_enters() {
     $('#customer').css({
