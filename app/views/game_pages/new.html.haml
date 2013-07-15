@@ -37,7 +37,8 @@
         .fish-div.draggable
           .hidden 
             species 
-          = species.name         
+          = species.name  
+          //= number_to_currency(species.price)       
 = javascript_include_tag 'play'
 
 
