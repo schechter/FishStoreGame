@@ -24,6 +24,7 @@ function start_round() {
 }
 
 function time_master() {
+    fish_bob();
     customer_timer++;
     console.log(customer_timer);
     master_time++;
@@ -31,16 +32,24 @@ function time_master() {
     if (master_time == 180) {
         round_over();
     }
-    if (customer_timer  == customer_interval) {
+    if (customer_timer == customer_interval) {
         customer_enters();
     }
+}
+
+function fish_bob() {
+    $(".fish-in-aquarium").animate({
+        top: "184px"
+    }, 400).animate({
+        top: " "
+    }, 370);
 }
 
 function customer_enters() {
     $('#customer').css({
         'top': '30%'
     });
-    setTimeout(customer_leaves, 1000 * (Math.floor(1+ Math.random()*4)));
+    setTimeout(customer_leaves, 1000 * (Math.floor(1 + Math.random() * 4)));
 }
 
 function customer_leaves() {
@@ -48,11 +57,11 @@ function customer_leaves() {
         'top': '-9999px'
     });
     customer_timer = 1;
-    customer_interval = 4;
+    customer_interval = 6;
 }
 
 function round_over() {
-    clearInterval(game_over_man);
+    clearInterval(master_timer);
     $.ajax({
         type: 'POST',
         data: 'game over man',
@@ -304,6 +313,7 @@ function dirty_tank6(tank) {
 
 function make_food() {
     timer = setInterval(add_pellet, 1);
+
     function add_pellet() {
         var pellet = $('<div>');
         pellet.addClass('pellet');
@@ -327,6 +337,7 @@ function food_ready() {
 function make_water() {
     water_timer = setInterval(add_water, 1);
     start_round();
+
     function add_water() {
         var water = $('<div>');
         water.addClass('water');
@@ -405,7 +416,7 @@ function add_aquarium_to_holder() {
     $.ajax({
         type: "POST",
         data: settings,
-        url: '/aquaria/'+ $(this).data().id+ '/sell_me'
+        url: '/aquaria/' + $(this).data().id + '/sell_me'
     });
 }
 
@@ -459,7 +470,7 @@ $(function() {
     $("#aquaria-supply").on('click', "#water-maker", make_water);
     $("#species-supply").on('mouseover', ".fish-div", species_draggable);
     $("#aquaria-holder").on('mouseover', '.fish-in-aquarium', fish_draggable);
-    $('#aquaria-supply').on('click', '.aquarium', add_aquarium_to_holder)
+    $('#aquaria-supply').on('click', '.aquarium', add_aquarium_to_holder);
     tanks_get_dirty_timer();
     tanks_need_food_timer();
 });
