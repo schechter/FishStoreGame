@@ -6,7 +6,7 @@
       Where you can manage a fish store,
       %span
         just like you always wanted.....
-    %h6
+    %h6.instructions-h6
       To start off you'll need to set up your store for the day.
       %ul.set-up-instruction
         %li
@@ -15,9 +15,18 @@
           Next you'll want to buy fish and put them in your new aquariums.  The more expensive breeds are harder to take care of, but you can make more money when you sell them.
         %li
           When you're ready to start the day, well...   push the start button
-      %img.instruction-pics
+        
+      %img.instructions-pics{src:'/assets/place-fish-in-tank.jpg'}
           
-      %ul.game-play-instructions
+      %ul.set-up-instruction
+        %li 
+          Start making water and food by clicking on the containers
+        %li
+          Keep your fish alive by feeding the tanks and adding clean water to tanks
+        %li
+          When customers pop in, sell them a fish by dragging one on to them.  
+      %img.instructions-pics{src:'/assets/feeding-a-tank.jpg'}
+      %img.instructions-pics{src:'/assets/selling-a-fish.jpg'}
 
   #bottom-buttons
     %a.button.bottom-nav.round{:href => "/some/route/twitter"} Tweet your Stats and get ..?

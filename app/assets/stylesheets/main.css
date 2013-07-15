@@ -39,7 +39,7 @@
 
 #stats-container {
   width: 850px;
-  height: 550px;
+  height: 650px;
   margin: auto;
   background-color: #88E5FF;
 }
@@ -124,27 +124,36 @@
 }
 
 #food-maker {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
   position:relative;
-  top: 25%;
+  top: 10px;
   left: 35%;
   height: 92px;
   width: 62px;
-  border:1px dashed gray;
   text-indent: -9999px;
   vertical-align: bottom;
   display: table-cell;
+  border-left:2px solid white;
+  border-right:2px solid white;
+  border-bottom:2px solid white;
+  border-bottom-radius:;
 }
 
 #water-maker {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
   position:relative;
-  top: 25%;
+  top: 40px;
   left: 35%;
   height: 90px;
   width: 60px;
-  border:1px dashed blue;
   text-indent: -9999px;
   vertical-align:bottom;
   display:table-cell; 
+  border-left:2px solid white;
+  border-right:2px solid white;
+  border-bottom:2px solid white;
 }
 
 .start-game {
@@ -196,7 +205,7 @@
 
 .tank-dirtiness-bar {
   height:150px;
-  width: 30px;
+  width: 28px;
   vertical-align:bottom;
   display:table-cell;
 }
@@ -207,7 +216,7 @@
 
 .tank-food-bar {
   height:150px;
-  width: 30px;
+  width: 28px;
   background-image:url("http://thefishshack.com/wp-content/uploads/2011/06/flake-food-300x225.jpg");
   float:right;
 }
@@ -276,8 +285,17 @@
   margin-left: 10px;
 }
 
+.set-up-instruction li {
+  line-height: 26px;
+}
+
 #instruction-text h1 {
   margin:0 15%;
+}
+
+#instructions-text h6 {
+  display:inline-block;
+  float:left;
 }
 
 #counter-bar{
@@ -315,4 +333,27 @@
   margin: 15px 0 0 20px;
   float:left;
   font-size: 18px;
+}
+
+.fish-report {
+  display: inline-block;
+  margin:0 5px;
+  line-height: 10px;
+}
+
+.instructions-pics {
+  position: relative;
+  top: -30px;
+  margin: 0 10px 10px 10px;
+  height: 155px;
+  width:auto;
+  float:right;
+}
+.set-up-instruction {
+  float: left;
+  width: 425px;
+}
+
+.instructions-h6 {
+  display:inline;
 }
