@@ -20,6 +20,7 @@
   margin: 0 20px;
   top: -225px;
   position: relative;
+  border-radius: 130px;
 }
 
 #bottom-buttons {
@@ -91,7 +92,12 @@
   border-bottom-left-radius: 35px;
   margin: 5px;
   display: inline-block;
-  background-image: url('http://walldeco.com.ua/images/phocagallery/sea/thumbs/phoca_thumb_m_4584.jpg')
+  background-image: url('http://walldeco.com.ua/images/phocagallery/sea/thumbs/phoca_thumb_m_4584.jpg');
+  font-size: 18px;
+  color:white;
+  line-height: 37px;
+  font-weight: bold;
+  text-shadow:1px 2px 3px #71f;
 }
 
 .fish-div{
@@ -236,7 +242,7 @@
   color:white;
   line-height: 37px;
   font-weight: bold;
-  text-shadow:1px 2px 3px #666;
+  text-shadow:1px 2px 3px #71f;
 }
 
 #funds-holder {
